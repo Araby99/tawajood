@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Regular;
+    src: url("../../public/fonts/Cairo-Regular.ttf");
+}
+@font-face {
+    font-family: SemiBold;
+    src: url("../../public/fonts/Cairo-SemiBold.ttf");
+}
+@font-face {
+    font-family: CairoBold;
+    src: url("../../public/fonts/Cairo-Bold.ttf");
+}
+@font-face {
+    font-family: MontMedium;
+    src: url("../../public/fonts/Montserrat-Medium.ttf");
+}
+
+.font-cairo-bold, .font-cairo-bold > * {
+    font-family: CairoBold;
+}
+.font-cairo-SemiBold, .font-cairo-SemiBold > * {
+    font-family: SemiBold;
+}
+.font-cairo-bold, .font-cairo-bold > * {
+    font-family: CairoBold;
+}
+.font-cairo-MontMedium, .font-cairo-MontMedium > * {
+    font-family: MontMedium;
+}
