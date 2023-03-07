@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.31.0",
     "@next/font": "13.2.1",
     "bootstrap": "^5.2.3",
     "google-map-react": "^2.2.0",
