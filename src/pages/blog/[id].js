@@ -11,6 +11,7 @@ import {
 } from 'next-share';
 
 import useFade from 'components/methods/useFade';
+import { useEffect } from 'react';
 const RelatedArticles = dynamic(import('components/blog/RelatedArticles'), { ssr: false });
 
 const Blog = () => {
@@ -22,6 +23,12 @@ const Blog = () => {
             : '';
     const URL = `${origin}${router.asPath}`;
     const blog = data[0].blog[id - 1];
+    useEffect(() => {
+        if (!blog) {
+            router.push("/404");
+        }
+    }, [blog])
+
     const [alert, setAlert, fadeProps] = useFade();
     const copy = url => {
         navigator.clipboard.writeText(url)

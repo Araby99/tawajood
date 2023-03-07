@@ -27,7 +27,7 @@ const Footer = (props) => {
                         <Link href="/#whyChoosingUs"><span>why us</span></Link>
                         <Link href="/#services"><span>services</span></Link>
                         <Link href="/contact-us"><span>contact us</span></Link>
-                        <Link href=""><span>projects</span></Link>
+                        <Link href="/projects"><span>projects</span></Link>
                         <Link href=""><span>privacy policy</span></Link>
                         <Link href="/blog"><span>blog</span></Link>
                         <Link href=""><span>terms and conditions</span></Link>

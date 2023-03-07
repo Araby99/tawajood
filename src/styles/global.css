@@ -514,6 +514,8 @@ hr {
 }
 .project-plan .project-item.image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .project-plan .project-item.text {
     padding: 50px;
@@ -614,7 +616,7 @@ hr {
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px 20px;
-    width: 60%;
+    width: 65%;
     margin: auto;
 }
 .why-container .why-item {
@@ -832,6 +834,10 @@ hr {
     display: flex;
     gap: 10px;
     padding-left: 50px;
+}
+.our-company-profile .owl-nav button {
+    z-index: 5000;
+    position: relative;
 }
 .our-company-profile .owl-theme .owl-nav [class*='owl-']:hover {
     background: none;
@@ -1054,7 +1060,7 @@ hr {
 }
 
 /* Jobs */
-.jobs .apply > * {
+.jobs .apply-btn > * {
     width: 70%;
     margin: auto;
     padding: 10px;
@@ -1065,10 +1071,10 @@ hr {
     font-size: 17px;
     text-align: center;
 }
-.jobs .apply.unvaild > * {
+.jobs .apply-btn.unvaild > * {
     background: #E6E7E8;
 }
-.jobs .apply.unvaild > * {
+.jobs .apply-btn.unvaild > * {
     color: #4F8CCA;
     text-decoration: line-through;
 }
@@ -1108,4 +1114,516 @@ hr {
     font-size: 24px;
     font-family: SemiBold;
     color: #315D83;
+}
+.error-404 .image img {
+    max-height: 50vh;
+    object-fit: contain;
+}
+
+/* Project Life Cycle */
+.project-life-cycle .project-life-head {
+    background: #F2F2F2;
+}
+.project-life-cycle .project-life-head .title span {
+    font-size: 56px;
+    color: #4F8CCA;
+    font-family: CairoBold;
+    position: relative;
+}
+.project-life-cycle .project-life-head .title span::after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 200px;
+    background: #4F8CCA;
+}
+.project-life-cycle .project-life-head .description span {
+    font-size: 24px;
+    font-family: SemiBold;
+    color: #315D83;
+}
+.project-life-cycle.project-page .project-plan .project-item {
+    padding-bottom: 150px;
+}
+.project-info .overlay {
+    position: fixed;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-info .overlay .background {
+    background: #4f8ccac7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.project-info .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: .5s;
+    padding: 7px;
+}
+.project-info .item img {
+    width: 100%!important;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+}
+.project-info.mobile .item .image {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-info .owl-item.active.center {
+    transform: scale(1.1);
+}
+.project-info .owl-item.active.center .image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../../public/images/projects/mobile.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.project-info.website .owl-item.active.center .image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200%;
+    width: 100%;
+    background: url("../../public/images/projects/website.png") no-repeat;
+    background-size: 100%;
+    background-position: top bottom;
+}
+.project-info.website .owl-item.active.center {
+    transform: scale(1.3);
+}
+.project-info .owl-stage-outer {
+    padding: 150px 0;
+}
+.project-info.mobile .owl-stage-outer {
+    padding: 70px 0;
+}
+.meet-our-team .owl-theme .owl-nav [class*='owl-']:hover {
+    background: none;
+}
+.project-info .owl-theme .owl-nav [class*='owl-']:hover {
+    background: none;
+}
+.projects-type .type {
+    padding: 10px 40px;
+    border-radius: 30px;
+    background: none;
+    border: solid 1px #4F8CCA;
+    color: #4F8CCA;
+}
+.projects-type .type.active {
+    background: #4F8CCA;
+    color: #fff;
+    font-family: CairoBold;
+}
+.projects-container .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 80px;
+}
+.projects-container .projects.mobile {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.projects-container .projects .project-item {
+    position: relative;
+    max-height: 400px;
+}
+.projects-container .projects .project-cover {
+    position: relative;
+    height: 100%;
+}
+.projects-container .projects .project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.projects-container .projects .project-name {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background: #4F8CCA;
+    width: 80%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+}
+.projects-container .projects .project-name span {
+    font-family: CairoBold;
+    font-size: 24px;
+    color: #fff;
+}
+.projects-container .project-action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 105%;
+    width: 110%;
+    transform: translate(-5%, -2.5%);
+    background: #4f8ccac7;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    transition: .5s;
+}
+.projects-container .project-cover:hover .project-action {
+    opacity: 1;
+}
+.projects-container .project-action .icon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #4F8CCA;
+    cursor: pointer;
+}
+.projects-container .pages .page {
+    cursor: pointer;
+    font-size: 17px;
+    color: #315D83;
+    transition: .5s;
+}
+.projects-container .pages .page.active {
+    font-size: 22px;
+    font-family: CairoBold;
+    color: #4F8CCA;
+}
+
+/* Apply */
+.apply {
+    background: #F2F2F2;
+}
+.apply .form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.apply form .tell {
+    grid-row: 4 / span 2;
+    grid-column: 2;
+}
+.apply .title {
+    border-bottom: solid 2px #fff;
+}
+.apply .title p {
+    font-size: 24px;
+    font-family: CairoBold;
+    color: #4F8CCA;
+}
+.apply form input,
+.apply form select {
+    font-size: 17px;
+    color: #C4C4C4;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background: #fff!important;
+}
+.apply form .submit {
+    margin-top: 100px;
+    width: 100%;
+}
+.apply form .submit input {
+    width: 35%;
+    margin: auto;
+    background: #4F8CCA!important;
+    color: #fff;
+    font-size: 24px;
+    font-family: CairoBold;
+}
+.apply-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.apply-overlay .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #4f8ccac7;
+    z-index: -1;
+}
+.apply-overlay .contect {
+    padding: 100px 200px;
+    background: #fff;
+    border-radius: 20px;
+}
+.apply-overlay .contect .title span {
+    font-size: 54px;
+    font-family: CairoBold;
+    color: #4F8CCA;
+}
+.apply-overlay .contect .title img {
+    max-height: 200px;
+}
+.apply-overlay .description {
+    font-size: 32px;
+    color: #315D83;
+}
+
+/* Media Query (Responive) */
+@media (max-width: 1550px) {
+    .why-container {
+        width: 90%;
+    }
+}
+@media (max-width: 1200px) {
+    .project-plan {
+        grid-template-columns: 1fr 1fr;
+    }
+    .project-life-cycle.project-page .project-plan .project-item {
+        border: solid 2px #fff;
+    }
+    .blog .blog-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+    }
+    .notch {
+        flex-wrap: wrap;
+        justify-content: center!important;
+        align-items: center;
+        gap: 20px;
+    }
+    .services-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .services-container .image {
+        grid-area: 1 / 1 / span1;
+    }
+    .why-choosing-us {
+        background-size: cover;
+    }
+    .why-container {
+        gap: 70px 20px;
+    }
+    .why-container .why-item:after {
+        content: none;
+    }
+    .nav-cont {
+        gap: 20px!important;
+        padding-bottom: 20px;
+    }
+    nav.navigate .navbar-nav > *::after {
+        content: none;
+    }
+    .carousel-caption {
+        line-height: 1;
+    }
+    .carousel-caption .mt-5 {
+        margin-top: 0!important;
+    }
+    .projects-container .projects.mobile,
+    .projects-container .projects {
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-info {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .contact-info > div {
+        flex: 40%;
+        justify-content: flex-start!important;
+        padding: 0 50px;
+    }
+    .contact-us .contact-item span {
+        font-size: 18px;
+        width: 100%;
+    }
+}
+@media (max-width: 700px) {
+    .px-5 {
+        padding: 0!important;
+    }
+    .mx-5 {
+        margin: 0 20px!important;
+    }
+    .our-mission-and-vision > div {
+        width: 100%;
+    }
+    .our-mission-and-vision .our-vision {
+        transform: none;
+        left: 0;
+    }
+    .projects-container .projects.website {
+        display: flex;
+        flex-direction: column;
+    }
+    .projects-container .projects.mobile .project-item {
+        max-height: none;
+        width: 70%;
+        margin: auto;
+    }
+    .blog .blog-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-item .blog-title {
+        position: relative;
+        top: 0;
+        transform: none;
+        text-align: center;
+    }
+}
+@media (max-width: 600px) {
+    .contact-us .banner .title {
+        font-size: 2.5rem;
+    }
+    .form {
+        flex-direction: column;
+        margin: 50px 20px!important;
+    }
+    .carousel {
+        height: 50vh;
+    }
+    .carousel .carousel-inner,
+    .carousel .carousel-item,
+    .carousel .carousel-item img {
+        height: 100%;
+    }
+    .carousel-caption .title {
+        font-size: 80px;
+    }
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .industries .industries-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .project-plan {
+        display: flex;
+        flex-direction: column;
+    }
+    .get-in-touch-with-us .contact a {
+        width: 70%;
+        padding: 20px 0;
+    }
+    .notch > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .blog-container .owl-item .item {
+        margin: 0 50px;
+    }
+    .footer-cont {
+        flex-direction: column;
+    }
+    .blog-container .item .tags {
+        flex-wrap: wrap;
+        gap: 0 20px;
+    }
+    .container-fluid.px-5 {
+        padding: 20px!important;
+    }
+    .industries .type > div {
+        font-size: 25px;
+    }
+    .industries .description {
+        font-size: 20px;
+        max-width: 80%;
+    }
+    .meet-our-team .description {
+        font-size: 18px;
+        width: 90%!important;
+        margin: 50px auto!important;
+    }
+    .our-company-profile {
+        width: 90%!important;
+    }
+    .description p {
+        font-size: 1.2rem;
+    }
+    .p-5 {
+        padding: 10px!important;
+    }
+    .projects-type {
+        gap: 10px!important;
+    }
+    .project-life-cycle .project-life-head .title span {
+        font-size: 35px;
+    }
+    .project-life-cycle .project-life-head .description span {
+        font-size: 20px;
+    }
+    .project-plan .project-item.text .step-name {
+        font-size: 25px;
+    }
+    .blog-item .content,
+    .tags {
+        padding: 20px;
+    }
+    .related .owl-item .item {
+        margin: 0!important;
+        width: 100%;
+    }
+    .apply .form-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .apply form .submit {
+        margin-top: 50px;
+    }
+}
+@media (max-width: 450px) {
+    .our-company-profile .download-our-cp a p {
+        font-size: 1rem;
+    }
+    .projects-container .projects.mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .filter {
+        flex-wrap: wrap;
+    }
+    .blog-item .blog-title {
+        padding: 20px;
+        font-size: 25px;
+    }
+    .section-title {
+        font-size: 40px;
+    }
 }

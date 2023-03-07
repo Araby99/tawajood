@@ -382,7 +382,179 @@ const data = [
                 cover: "/images/jobs/job-img-3.png",
                 valid: false
             },
-        ]
+        ],
+        projects: {
+            mobile: [
+                {
+                    id: 1,
+                    name: "Quest",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 2,
+                    name: "Ynabeaa",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 3,
+                    name: "Grocery",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 4,
+                    name: "Zabeeha",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 5,
+                    name: "X Store",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 6,
+                    name: "My Closet",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 7,
+                    name: "Wash Box",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 8,
+                    name: "Mazad KW",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 9,
+                    name: "Beema",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 10,
+                    name: "Mobelia",
+                    googlePlay: "",
+                    appStore: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+            ],
+            website: [
+                {
+                    id: 1,
+                    name: "HFO",
+                    preview: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                },
+                {
+                    id: 2,
+                    name: "MHD",
+                    preview: "",
+                    images: [
+                        "1.png",
+                        "2.png",
+                        "3.png",
+                        "4.png",
+                        "5.png",
+                    ],
+                    cover: "cover.png"
+                }
+            ]
+        }
     }
 ]
 export default data

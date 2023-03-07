@@ -9,14 +9,16 @@ import Link from 'next/link';
 const OurBlog = () => {
     const owlRespoinsive = {
         0: {
-            items: 1
+            items: 1,
+            margin: 0
         },
-        1000: {
-            items: 3
+        600: {
+            items: 2
         },
         1600: {
-            items: 4
-        },
+            items: 3,
+            margin: 50
+        }
     }
     return (
         <div className='our-blog py-5'>
@@ -49,7 +51,7 @@ const OurBlog = () => {
                                             }
                                         </div>
                                         <p className="content">{blog.content.slice(0, 100)}...</p>
-                                        <div className="read"><Link href=""><img src="/images/icons/arrow-right-2.png" alt="Arrow" /></Link></div>
+                                        <div className="read"><Link href={`/blog/${blog.id}`}><img src="/images/icons/arrow-right-2.png" alt="Arrow" /></Link></div>
                                     </div>
                                 )
                             })

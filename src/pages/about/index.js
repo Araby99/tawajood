@@ -17,8 +17,8 @@ const About = () => {
                 <Banner />
                 <Description />
                 <OurMissionAndVision />
-                <OurCompanyProfile />
                 <MeetOurTeam />
+                <OurCompanyProfile />
             </div>
         </>
     )

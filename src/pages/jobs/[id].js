@@ -10,6 +10,7 @@ import {
 } from 'next-share';
 
 import useFade from 'components/methods/useFade';
+import { useEffect } from 'react';
 
 const Job = () => {
     const router = useRouter()
@@ -20,6 +21,11 @@ const Job = () => {
             : '';
     const URL = `${origin}${router.asPath}`;
     const job = data[0].jobs[id - 1];
+    useEffect(() => {
+        if (!job) {
+            router.push("/404");
+        }
+    }, [job])
     const [alert, setAlert, fadeProps] = useFade();
     const copy = url => {
         navigator.clipboard.writeText(url)
@@ -93,8 +99,8 @@ const Job = () => {
                                     {job.jobDescription}
                                 </div>
                             </div>
-                            <div className="apply mb-5 pb-5 d-flex justify-content-center">
-                                <Link href="/job/apply" className='w-25'>Apply Now</Link>
+                            <div className="apply-btn mb-5 pb-5 d-flex justify-content-center">
+                                <Link href="/jobs/apply" className='w-25'>Apply Now</Link>
                             </div>
                         </div>
                     </>

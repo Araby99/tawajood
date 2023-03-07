@@ -6,10 +6,10 @@ const BlogContainer = ({ blogs, filterActive, setFilterActive }) => {
     const [activePage, setActivePage] = useState(1)
     const blogsByPage = 9;
     const allBlogs = blogs.length;
-    const numberOfPages = Math.round(allBlogs / blogsByPage);
+    const numberOfPages = Math.ceil(allBlogs / blogsByPage);
     let pages = [];
     for (let i = 1; i <= numberOfPages; i++) pages.push(i);
-    useEffect(() => filterActive !== undefined ? setVisibleBlogs(blogs.filter(blog => blog.tags.includes(filterActive)).slice(9 * (activePage - 1), 9 * activePage)) : setVisibleBlogs(blogs.slice(9 * (activePage - 1), 9 * activePage)), [activePage, filterActive])
+    useEffect(() => filterActive !== undefined ? setVisibleBlogs(blogs.filter(blog => blog.tags.includes(filterActive)).slice(blogsByPage * (activePage - 1), blogsByPage * activePage)) : setVisibleBlogs(blogs.slice(blogsByPage * (activePage - 1), blogsByPage * activePage)), [activePage, filterActive])
     const ChangeActivePage = num => {
         setActivePage(num);
         window.scrollTo({
@@ -51,17 +51,21 @@ const BlogContainer = ({ blogs, filterActive, setFilterActive }) => {
                     })
                 }
             </div>
-            <div className="pagination py-5 d-flex justify-content-center align-items-center gap-5">
-                <div className={`left arrow ${activePage !== 1 && "active"}`} onClick={() => activePage !== 1 && ChangeActivePage(activePage - 1)}><img src={`./images/icons/arrow-left-${activePage == 1 ? "hidden" : "active"}.png`} alt="Arrow" /></div>
-                <div className="pages d-flex gap-4 align-items-center">
-                    {
-                        pages.map((num, index) => (
-                            <span key={index} className={`${activePage == num ? "page active" : "page"}`} onClick={() => ChangeActivePage(num)}>{num}</span>
-                        ))
-                    }
-                </div>
-                <div className={`right arrow ${activePage !== numberOfPages && "active"}`} onClick={() => activePage !== numberOfPages && ChangeActivePage(activePage + 1)}><img src={`./images/icons/arrow-right-${activePage == numberOfPages ? "hidden" : "active"}.png`} alt="Arrow" /></div>
-            </div>
+            {
+                allBlogs > blogsByPage && (
+                    <div className="pagination py-5 d-flex justify-content-center align-items-center gap-5">
+                        <div className={`left arrow ${activePage !== 1 && "active"}`} onClick={() => activePage !== 1 && ChangeActivePage(activePage - 1)}><img src={`./images/icons/arrow-left-${activePage == 1 ? "hidden" : "active"}.png`} alt="Arrow" /></div>
+                        <div className="pages d-flex gap-4 align-items-center">
+                            {
+                                pages.map((num, index) => (
+                                    <span key={index} className={`${activePage == num ? "page active" : "page"}`} onClick={() => ChangeActivePage(num)}>{num}</span>
+                                ))
+                            }
+                        </div>
+                        <div className={`right arrow ${activePage !== numberOfPages && "active"}`} onClick={() => activePage !== numberOfPages && ChangeActivePage(activePage + 1)}><img src={`./images/icons/arrow-right-${activePage == numberOfPages ? "hidden" : "active"}.png`} alt="Arrow" /></div>
+                    </div>
+                )
+            }
         </div>
     )
 }

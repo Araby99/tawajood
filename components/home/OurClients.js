@@ -7,14 +7,18 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 const OurClients = (props) => {
     const owlRespoinsive = {
         0: {
-            items: 1
+            items: 3,
+            margin: 50
         },
-        1000: {
+        900: {
             items: 3
+        },
+        1400: {
+            items: 5
         },
         1600: {
             items: 6
-        },
+        }
     }
     return (
         <div className='our-clients py-5'>

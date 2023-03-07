@@ -6,7 +6,7 @@ const Member = ({ image, name, position }) => {
             <div className="image">
                 <img src={image ? image : "/images/about/meet-our-team/user.png"} alt={name} />
             </div>
-            <p className="name mt-4 font-cairo-bold">{name}</p>
+            <p className="name mt-4 font-cairo-bold text-center">{name}</p>
             <p className="position font-cairo-semibold">{position}</p>
         </div>
     )

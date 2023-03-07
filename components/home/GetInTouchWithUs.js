@@ -11,7 +11,7 @@ const GetInTouchWithUs = () => {
                     <p className="section-title">Get In Touch With Us</p>
                 </div>
                 <div className="contact">
-                    <Link href="#">
+                    <Link href="/contact-us">
                         Contact Us
                     </Link>
                 </div>

@@ -13,11 +13,11 @@ const NavbarSection = ({ mode }) => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
-                    <Nav className='gap-5 font-cairo-bold'>
+                    <Nav className='gap-5 nav-cont font-cairo-bold'>
                         <Link href="/jobs" className={`${mode} px-0 py-2`}>hiring</Link>
                         <Link href="/about" className={`${mode} px-0 py-2`}>about us</Link>
                         <Link href="/#services" className={`${mode} px-0 py-2`}>services</Link>
-                        <Nav.Link className={`${mode} px-0 py-2`}>projects</Nav.Link>
+                        <Link href="/projects" className={`${mode} px-0 py-2`}>projects</Link>
                         <Link href="/blog" className={`${mode} px-0 py-2`}>blog</Link>
                         <Link href="/#whyChoosingUs" className={`${mode} px-0 py-2`}>why choosing us</Link>
                         <Link href="/contact-us" className={`${mode} px-0 py-2`}>contact us</Link>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactInfo = () => {
     return (
-        <div className='d-flex justify-content-between align-items-center px-5 my-5'>
+        <div className='contact-info d-flex justify-content-between align-items-center px-5 my-5'>
             <div className="contact-item d-flex justify-content-center w-100 align-items-center gap-5">
                 <div className="icon">
                     <i className="fas fa-phone"></i>
