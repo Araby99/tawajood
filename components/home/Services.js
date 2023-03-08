@@ -6,7 +6,7 @@ const Services = (props) => {
         <div className={`services py-5 ${props.mode}`} id="services">
             <Container fluid className='px-5'>
                 <div className="section-main-title mb-5">
-                    <p className="section-title-sm">services</p>
+                    <p className={`section-title-sm ${props.mode}`}>services</p>
                     <p className="section-title">our services</p>
                 </div>
                 <div className="services-container py-5">

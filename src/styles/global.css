@@ -4,13 +4,16 @@
 .root {
     min-height: 100vh;
 }
+.root.ar {
+    direction: rtl;
+}
 .root > * {
     transition: .5s;
 }
 html {
     --scroll-behavior: smooth!important;
     scroll-behavior: smooth!important;
-    }
+}
 a {
     color: inherit;
     text-decoration: none;
@@ -55,6 +58,7 @@ nav.navigate .navbar-nav > *.dark {
     top: 50%;
     transform: translate(0, -50%);
     z-index: 1000;
+    direction: ltr;
 }
 .setting .contect {
     background: #4F8CCA;
@@ -149,6 +153,7 @@ nav.navigate .navbar-nav > *.dark {
     top: 30%;
     transform: translate(0, -50%);
     z-index: 1000;
+    direction: ltr;
 }
 .get-in-touch > div {
     background: #4F8CCA;
@@ -393,6 +398,9 @@ hr {
     color: #315D83;
     text-transform: capitalize;
 }
+.section-title-sm.dark {
+    color: #fff;
+}
 .section-title {
     font-size: 50px;
     font-family: CairoBold;
@@ -559,8 +567,15 @@ hr {
 }
 
 /* Our Clients */
+.our-clients {
+    direction: ltr;
+}
 .our-clients .owl-theme .item {
     padding: 10px;
+    border-radius: 10px;
+}
+.our-clients .owl-theme .item .light {
+    background-color: #fff;
     border-radius: 10px;
 }
 .our-clients .owl-theme > .owl-stage-outer > .owl-stage > div:nth-of-type(even) {
@@ -686,6 +701,13 @@ hr {
 }
 
 /* Our Blog */
+.blog-container {
+    direction: ltr;
+}
+.blog-container.dark .item .tags,
+.blog-container.dark .item .content {
+    color: #fff;
+}
 .blog-container .owl-stage-outer {
     padding: 70px 0;
 }
@@ -695,6 +717,14 @@ hr {
     border-radius: 10px;
     box-shadow: 10px 10px 0px 0px transparent;
     transition: .5s;
+}
+.blog-container .item.ar {
+    direction: rtl;
+}
+.blog-container .item.ar .date {
+    left: 0;
+    right: 50%;
+    transform: translate(50%, -50%);
 }
 .blog-container .item .cover img {
     width: 100%;
@@ -796,11 +826,14 @@ hr {
     margin: auto;
     text-align: center;
 }
+.description.dark p {
+    color: #fff;
+}
 
 /* Our Mission And Vision */
 .our-mission-and-vision {
     background: url("../../public/images/about/our-mission-and-vision/mission-bg.png") right bottom no-repeat;
-    background-size: contain;    
+    background-size: contain;
 }
 .our-mission-and-vision > div {
     width: 50%;
@@ -825,10 +858,16 @@ hr {
     left: 50%;
     transform: translate(-10%, -20%);
 }
+.our-mission-and-vision .our-vision.ar {
+    left: 0;
+    right: 50%;
+    transform: translate(10%, -20%);
+}
 
 /* Our Company Profile */
 .our-company-profile {
     position: relative;
+    direction: ltr;
 }
 .our-company-profile .owl-nav {
     display: flex;
@@ -887,10 +926,14 @@ hr {
     font-size: 24px;
     color: #315D83;
 }
+.meet-our-team.dark .description {
+    color: #fff;
+}
 .meet-our-team .level {
     display: flex;
     justify-content: center;
     align-items: center;
+    direction: ltr;
 }
 .meet-our-team .member .image {
     height: 150px;
@@ -921,6 +964,9 @@ hr {
 .meet-our-team .member .position {
     font-size: 17px;
     color: #315D83;
+}
+.meet-our-team.dark .member .position {
+    color: #fff;
 }
 
 /* Our Blog */ 
@@ -1054,12 +1100,19 @@ hr {
     line-height: 2;
     text-align: justify;
 }
+.blog-item.dark .tags a,
+.blog-item.dark .content {
+    color: #fff;
+}
 .related .blog-container .owl-item.active.center .item {
     box-shadow: none;
     transform: none;
 }
 
 /* Jobs */
+.jobs.dark .content {
+    color: #fff;
+}
 .jobs .apply-btn > * {
     width: 70%;
     margin: auto;
@@ -1085,6 +1138,13 @@ hr {
     padding: 15px 30px;
     border-radius: 30px;
 }
+.contact-us .form.dark input,
+.contact-us .form.dark select,
+.contact-us .form.dark textarea,
+.contact-us .form.dark .form-floating label {
+    background: none;
+    color: #fff!important;
+}
 .contact-us .form input[type="submit"] {
     border: none;
     background: #4F8CCA;
@@ -1109,6 +1169,9 @@ hr {
     font-family: SemiBold;
     color: #4F8CCA;
     max-width: 50%;
+}
+.contact-us .form.dark .image img {
+    background: #fff;
 }
 .error-404 p {
     font-size: 24px;
@@ -1480,6 +1543,7 @@ hr {
     }
     .our-mission-and-vision > div {
         width: 100%;
+        padding: 30px!important;
     }
     .our-mission-and-vision .our-vision {
         transform: none;
@@ -1606,6 +1670,15 @@ hr {
     }
     .apply form .submit {
         margin-top: 50px;
+    }
+    .project-life-cycle .project-life-head {
+        padding: 40px!important;
+    }
+    .current-path {
+        margin-top: 20px;
+    }
+    .apply-btn a {
+        width: 50%!important;
     }
 }
 @media (max-width: 450px) {

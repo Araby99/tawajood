@@ -1,11 +1,11 @@
-import React, { Children, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic';
 const Member = dynamic(import('./Member'), { ssr: false });
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-const MeetOurTeam = () => {
+const MeetOurTeam = (props) => {
     const owlRespoinsive = {
         0: {
             items: 1
@@ -28,9 +28,9 @@ const MeetOurTeam = () => {
         '<span class="arrow next"><img src="/images/icons/arrow-right-2.png" alt"Arrow" /></span>'
     ]
     return (
-        <div className='meet-our-team py-5'>
+        <div className={`meet-our-team py-5 ${props.mode}`}>
             <div className="section-main-title mb-5">
-                <p className="section-title-sm">Our Team</p>
+                <p className={`section-title-sm ${props.mode}`}>Our Team</p>
                 <p className="section-title">Meet Our Team</p>
             </div>
             <p className="description w-75 m-auto text-center">

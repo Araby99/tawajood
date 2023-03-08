@@ -1,11 +1,10 @@
 import Banner from 'components/Jobs/Banner'
 import Head from 'next/head'
-import React, { useState } from 'react'
+import React from 'react'
 import data from '@/pages/data/data';
 import JobsContainer from 'components/jobs/JobsContainer';
 
-const index = () => {
-    const [jobs, setJobs] = useState(data[0].jobs);
+const index = (props) => {
     return (
         <>
             <Head>
@@ -13,7 +12,7 @@ const index = () => {
             </Head>
             <div className='blog'>
                 <Banner />
-                <JobsContainer jobs={jobs} />
+                <JobsContainer mode={props.mode} jobs={data[0].jobs} />
             </div>
         </>
     )

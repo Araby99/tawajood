@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import ProjectItemWebsite from './ProjectItemWebsite'
 import ProjectItemMobile from './ProjectItemMobile'
 
-const ProjectsContainer = ({ project, type, setOverlayActive, setId, folderName, setType }) => {
+const ProjectsContainer = ({ lang, project, type, setOverlayActive, setId, folderName, setType }) => {
     const container = useRef(null)
     return (
         <div className='projects-container p-5 m-4' ref={container}>
@@ -15,9 +15,9 @@ const ProjectsContainer = ({ project, type, setOverlayActive, setId, folderName,
             </div>
             {
                 type == "mobile" ? (
-                    <ProjectItemMobile top={container} type={type} folderName={folderName} setId={setId} setOverlayActive={setOverlayActive} project={project.mobile} />
+                    <ProjectItemMobile lang={lang} top={container} type={type} folderName={folderName} setId={setId} setOverlayActive={setOverlayActive} project={project.mobile} />
                 ) : (
-                    <ProjectItemWebsite top={container} type={type} folderName={folderName} setId={setId} setOverlayActive={setOverlayActive} project={project.website} />
+                    <ProjectItemWebsite lang={lang} top={container} type={type} folderName={folderName} setId={setId} setOverlayActive={setOverlayActive} project={project.website} />
                 )
             }
         </div>

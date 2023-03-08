@@ -24,46 +24,46 @@ const OurClients = (props) => {
         <div className='our-clients py-5'>
             <Container fluid className='px-5'>
                 <div className="section-main-title mb-5">
-                    <p className="section-title-sm">Clients</p>
+                    <p className={`section-title-sm ${props.mode}`}>Clients</p>
                     <p className="section-title">Our Clients</p>
                 </div>
                 <div className="clients">
                     <OwlCarousel className='owl-theme' autoplay autoplayTimeout="3000" autoplayHoverPause loop margin={150} center responsive={owlRespoinsive}>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-1.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-1.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-2.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-2.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-3.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-3.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-4.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-4.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-5.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-5.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-6.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-6.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-7.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-7.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-8.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-8.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-9.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-9.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-10.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-10.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-11.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-11.png" alt="Client" />
                         </div>
-                        <div className={`item ${props.mode}`}>
-                            <img src="/images/home/clients/client-12.png" alt="Client" />
+                        <div className="item">
+                            <img className={props.mode} src="/images/home/clients/client-12.png" alt="Client" />
                         </div>
                     </OwlCarousel>
                 </div>

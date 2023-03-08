@@ -1,12 +1,12 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 
-const WhyChoosingUs = () => {
+const WhyChoosingUs = (props) => {
     return (
         <div className='why-choosing-us py-5' id='whyChoosingUs'>
             <Container fluid className='p-5'>
                 <div className="section-main-title mb-5 white">
-                    <p className="section-title-sm">Why Us</p>
+                    <p className={`section-title-sm ${props.mode}`}>Why Us</p>
                     <p className="section-title">Why Choosing Us</p>
                 </div>
                 <div className="why-container py-5">

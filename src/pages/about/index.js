@@ -7,7 +7,7 @@ import OurMissionAndVision from 'components/about/OurMissionAndVision'
 const OurCompanyProfile = dynamic(import('components/about/OurCompanyProfile'), { ssr: false });
 const MeetOurTeam = dynamic(import('components/about/MeetOurTeam'), { ssr: false });
 
-const About = () => {
+const About = (props) => {
     return (
         <>
             <Head>
@@ -15,10 +15,13 @@ const About = () => {
             </Head>
             <div className="about">
                 <Banner />
-                <Description />
-                <OurMissionAndVision />
-                <MeetOurTeam />
-                <OurCompanyProfile />
+                <Description {...props} />
+                <hr />
+                <OurMissionAndVision {...props} />
+                <hr />
+                <MeetOurTeam {...props} />
+                <hr />
+                <OurCompanyProfile {...props} />
             </div>
         </>
     )

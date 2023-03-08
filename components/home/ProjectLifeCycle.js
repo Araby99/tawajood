@@ -7,8 +7,8 @@ const ProjectLifeCycle = (props) => {
         <div className={`project-life-cycle py-5 ${props.mode}`}>
             <Container fluid className='px-5'>
                 <div className="section-main-title mb-5">
-                    <p className="section-title-sm">Our Process</p>
-                    <p className="section-title">Project life cycle:</p>
+                    <p className={`section-title-sm ${props.mode}`}>Our Process</p>
+                    <p className="section-title">Project life cycle</p>
                 </div>
                 <div className="project-plan">
                     <ProjectItem link={true} step="01" name="Market Research | Analysis" theme="1" />

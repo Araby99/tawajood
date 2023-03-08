@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
-const BlogContainer = ({ blogs, filterActive, setFilterActive }) => {
+const BlogContainer = ({ mode, lang, blogs, filterActive, setFilterActive }) => {
     const [visibleBlogs, setVisibleBlogs] = useState(blogs);
     const [activePage, setActivePage] = useState(1)
     const blogsByPage = 9;
@@ -21,11 +21,11 @@ const BlogContainer = ({ blogs, filterActive, setFilterActive }) => {
 
     return (
         <div className="blogs">
-            <div className="blog-container p-5 gap-5">
+            <div className={`blog-container p-5 gap-5 ${mode}`}>
                 {
                     visibleBlogs.map((blog, index) => {
                         return (
-                            <div className="item" key={index}>
+                            <div className={`item ${lang}`} key={index}>
                                 <div className="cover">
                                     <img src={blog.cover} alt="Cover" />
                                 </div>
@@ -54,7 +54,7 @@ const BlogContainer = ({ blogs, filterActive, setFilterActive }) => {
             {
                 allBlogs > blogsByPage && (
                     <div className="pagination py-5 d-flex justify-content-center align-items-center gap-5">
-                        <div className={`left arrow ${activePage !== 1 && "active"}`} onClick={() => activePage !== 1 && ChangeActivePage(activePage - 1)}><img src={`./images/icons/arrow-left-${activePage == 1 ? "hidden" : "active"}.png`} alt="Arrow" /></div>
+                        <div className={`left arrow ${activePage !== 1 && "active"}`} onClick={() => activePage !== 1 && ChangeActivePage(activePage - 1)}><img src={lang == "en" ? `/images/icons/arrow-left-${activePage == 1 ? "hidden" : "active"}.png` : `/images/icons/arrow-right-${activePage == 1 ? "hidden" : "active"}.png`} alt="Arrow" /></div>
                         <div className="pages d-flex gap-4 align-items-center">
                             {
                                 pages.map((num, index) => (
@@ -62,7 +62,7 @@ const BlogContainer = ({ blogs, filterActive, setFilterActive }) => {
                                 ))
                             }
                         </div>
-                        <div className={`right arrow ${activePage !== numberOfPages && "active"}`} onClick={() => activePage !== numberOfPages && ChangeActivePage(activePage + 1)}><img src={`./images/icons/arrow-right-${activePage == numberOfPages ? "hidden" : "active"}.png`} alt="Arrow" /></div>
+                        <div className={`right arrow ${activePage !== numberOfPages && "active"}`} onClick={() => activePage !== numberOfPages && ChangeActivePage(activePage + 1)}><img src={lang == "en" ? `/images/icons/arrow-right-${activePage == numberOfPages ? "hidden" : "active"}.png` : `/images/icons/arrow-left-${activePage == numberOfPages ? "hidden" : "active"}.png`} alt="Arrow" /></div>
                     </div>
                 )
             }

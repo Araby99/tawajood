@@ -3,12 +3,12 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { useForm } from "react-hook-form";
 
-const FormContainer = () => {
+const FormContainer = ({ mode }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
 
     return (
-        <div className='form mx-5 gap-5 p-5 d-flex justify-content-between align-items-center'>
+        <div className={`form mx-5 gap-5 p-5 d-flex justify-content-between align-items-center ${mode}`}>
             <Form className='w-100 d-flex flex-column gap-4' onSubmit={handleSubmit(onSubmit)}>
                 <Form.Select aria-label="Default select example" defaultValue=""{...register("serviceType", { required: true })}>
                     <option disabled hidden value="">Service Name</option>

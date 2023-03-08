@@ -6,7 +6,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import data from '@/pages/data/data';
 import Link from 'next/link';
 
-const OurBlog = () => {
+const OurBlog = (props) => {
     const owlRespoinsive = {
         0: {
             items: 1,
@@ -24,10 +24,10 @@ const OurBlog = () => {
         <div className='our-blog py-5'>
             <Container fluid className='p-5'>
                 <div className="section-main-title mb-5">
-                    <p className="section-title-sm">Our Blog</p>
+                    <p className={`section-title-sm ${props.mode}`}>Our Blog</p>
                     <p className="section-title">Our Blog</p>
                 </div>
-                <div className="blog-container">
+                <div className={`blog-container ${props.mode}`}>
                     <OwlCarousel className='owl-theme' dots={false} autoplay autoplayTimeout="3000" autoplayHoverPause loop margin={50} center responsive={owlRespoinsive}>
                         {
                             data[0].blog.map((blog, index) => {

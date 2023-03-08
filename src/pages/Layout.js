@@ -7,7 +7,7 @@ import Whatsapp from 'components/Whatsapp'
 
 const Layout = (props) => {
     return (
-        <div className={`bg-${props.mode == "light" ? "white" : "dark"} root`}>
+        <div className={`bg-${props.mode == "light" ? "white" : "dark"} ${props.lang == "ar" ? "ar" : "en"} root`}>
             <Navbar mode={props.mode} />
             <Settings {...props} />
             <GetInTouch {...props} />

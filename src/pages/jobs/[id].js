@@ -12,7 +12,7 @@ import {
 import useFade from 'components/methods/useFade';
 import { useEffect } from 'react';
 
-const Job = () => {
+const Job = (props) => {
     const router = useRouter()
     const { id } = router.query
     const origin =
@@ -42,7 +42,7 @@ const Job = () => {
                         <Head>
                             <title>Tawajood | {job.position}</title>
                         </Head>
-                        <div className='blog-item jobs'>
+                        <div className={`blog-item jobs ${props.mode}`}>
                             {alert && (
                                 <Alert variant="success" {...fadeProps} className="alert">
                                     Link Copied to clipboard !

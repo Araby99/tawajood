@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
-const ProjectItem = ({ top, type, project, folderName, setId, setOverlayActive }) => {
+const ProjectItem = ({ lang, top, type, project, folderName, setId, setOverlayActive }) => {
     const showInfo = (id) => {
         setId(id);
         setOverlayActive(true);
@@ -54,7 +54,7 @@ const ProjectItem = ({ top, type, project, folderName, setId, setOverlayActive }
             </div>
             {allProjects > projectsByPage && (
                 <div className="pagination py-5 d-flex justify-content-center align-items-center gap-5">
-                    <div className={`left arrow ${activePage !== 1 && "active"}`} onClick={() => activePage !== 1 && ChangeActivePage(activePage - 1)}><img src={`/images/icons/arrow-left-${activePage == 1 ? "hidden" : "active"}.png`} alt="Arrow" /></div>
+                    <div className={`left arrow ${activePage !== 1 && "active"}`} onClick={() => activePage !== 1 && ChangeActivePage(activePage - 1)}><img src={lang == "en" ? `/images/icons/arrow-left-${activePage == 1 ? "hidden" : "active"}.png` : `/images/icons/arrow-right-${activePage == 1 ? "hidden" : "active"}.png`} alt="Arrow" /></div>
                     <div className="pages d-flex gap-4 align-items-center">
                         {
                             pages.map((num, index) => (
@@ -62,7 +62,7 @@ const ProjectItem = ({ top, type, project, folderName, setId, setOverlayActive }
                             ))
                         }
                     </div>
-                    <div className={`right arrow ${activePage !== numberOfPages && "active"}`} onClick={() => activePage !== numberOfPages && ChangeActivePage(activePage + 1)}><img src={`/images/icons/arrow-right-${activePage == numberOfPages ? "hidden" : "active"}.png`} alt="Arrow" /></div>
+                    <div className={`right arrow ${activePage !== numberOfPages && "active"}`} onClick={() => activePage !== numberOfPages && ChangeActivePage(activePage + 1)}><img src={lang == "en" ? `/images/icons/arrow-right-${activePage == numberOfPages ? "hidden" : "active"}.png` : `/images/icons/arrow-left-${activePage == numberOfPages ? "hidden" : "active"}.png`} alt="Arrow" /></div>
                 </div>
             )}
         </>

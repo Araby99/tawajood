@@ -5,7 +5,7 @@ import Map from 'components/contact-us/Map'
 import Head from 'next/head'
 import React from 'react'
 
-const ContactUs = () => {
+const ContactUs = (props) => {
     return (
         <>
             <Head>
@@ -13,7 +13,7 @@ const ContactUs = () => {
             </Head>
             <div className='contact-us'>
                 <Banner />
-                <Form />
+                <Form mode={props.mode} />
                 <ContactInfo />
                 <Map />
             </div>

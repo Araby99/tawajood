@@ -5,9 +5,8 @@ import data from '@/pages/data/data';
 import BlogContainer from 'components/blog/BlogContainer';
 import { useRouter } from 'next/router';
 
-const index = () => {
+const Blogs = (props) => {
     const route = useRouter();
-    const [blogs, setBlogs] = useState(data[0].blog);
     const [filterActive, setFilterActive] = useState(route.query.tag !== undefined ? route.query.tag : undefined);
     const filter = tag => setFilterActive(tag)
     return (
@@ -17,10 +16,10 @@ const index = () => {
             </Head>
             <div className='blog'>
                 <Banner blogTags={data[0].blogTags} filterActive={filterActive} filter={filter} />
-                <BlogContainer blogs={blogs} filterActive={filterActive} setFilterActive={setFilterActive} />
+                <BlogContainer mode={props.mode} lang={props.lang} blogs={data[0].blog} filterActive={filterActive} setFilterActive={setFilterActive} />
             </div>
         </>
     )
 }
 
-export default index
+export default Blogs

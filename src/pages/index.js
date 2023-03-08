@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
 import dynamic from 'next/dynamic';
 import Carousel from 'components/home/Carousel'
 import Services from 'components/home/Services'
@@ -11,7 +10,6 @@ import WhyChoosingUs from 'components/home/WhyChoosingUs';
 const OurClients = dynamic(import('components/home/OurClients'), { ssr: false });
 const OurBlog = dynamic(import('components/home/OurBlog'), { ssr: false });
 
-const inter = Inter({ subsets: ['latin'] })
 const Home = (props) => {
     return (
         <>
@@ -29,11 +27,11 @@ const Home = (props) => {
             <hr />
             <GetInTouchWithUs {...props} />
             <hr />
-            <OurTopNotch />
+            <OurTopNotch {...props} />
             <hr />
-            <WhyChoosingUs />
+            <WhyChoosingUs {...props} />
             <hr />
-            <OurBlog />
+            <OurBlog {...props} />
         </>
     )
 }

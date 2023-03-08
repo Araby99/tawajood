@@ -14,7 +14,7 @@ import useFade from 'components/methods/useFade';
 import { useEffect } from 'react';
 const RelatedArticles = dynamic(import('components/blog/RelatedArticles'), { ssr: false });
 
-const Blog = () => {
+const Blog = (props) => {
     const router = useRouter()
     const { id } = router.query
     const origin =
@@ -45,7 +45,7 @@ const Blog = () => {
                         <Head>
                             <title>Tawajood | {blog.title}</title>
                         </Head>
-                        <div className='blog-item'>
+                        <div className={`blog-item ${props.mode}`}>
                             {alert && (
                                 <Alert variant="success" {...fadeProps} className="alert">
                                     Link Copied to clipboard !
@@ -113,7 +113,7 @@ const Blog = () => {
                                 </div>
                             </div>
                         </div>
-                        <RelatedArticles />
+                        <RelatedArticles {...props} />
                     </>
                 )
             }

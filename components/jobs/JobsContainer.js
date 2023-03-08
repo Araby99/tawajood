@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
-const JobContainer = ({ jobs }) => {
+const JobContainer = ({ mode, jobs }) => {
     const [visibleJobs, setVisibleJobs] = useState(jobs);
     const [activePage, setActivePage] = useState(1)
     const blogsByPage = 9;
@@ -21,7 +21,7 @@ const JobContainer = ({ jobs }) => {
 
     return (
         <div className="blogs jobs">
-            <div className="blog-container p-5 gap-5">
+            <div className={`blog-container p-5 gap-5 ${mode}`}>
                 {
                     visibleJobs.map((job, index) => {
                         return (

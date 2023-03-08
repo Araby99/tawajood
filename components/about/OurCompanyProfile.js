@@ -4,7 +4,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 
-const OurCompanyProfile = () => {
+const OurCompanyProfile = (props) => {
     const [overlay, setOverlay] = useState(false);
     const owlRespoinsive = {
         0: {
@@ -22,7 +22,7 @@ const OurCompanyProfile = () => {
     return (
         <div className='our-company-profile py-5 w-75 m-auto'>
             <div className="section-main-title mb-5">
-                <p className="section-title-sm">Company Profile</p>
+                <p className={`section-title-sm ${props.mode}`}>Company Profile</p>
                 <p className="section-title">Our Company Profile</p>
             </div>
             <OwlCarousel className='owl-theme' autoplay nav={true} autoplayTimeout="3000" navText={navText} dots={false} autoplayHoverPause loop center responsive={owlRespoinsive}>

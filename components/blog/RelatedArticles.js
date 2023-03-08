@@ -5,7 +5,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import data from '@/pages/data/data';
 import Link from 'next/link';
 
-const RelatedArticles = () => {
+const RelatedArticles = (props) => {
     const owlRespoinsive = {
         0: {
             items: 1
@@ -24,10 +24,10 @@ const RelatedArticles = () => {
     return (
         <div className='our-company-profile related py-5 w-75 m-auto'>
             <div className="section-main-title">
-                <p className="section-title-sm">Articles</p>
+                <p className={`section-title-sm ${props.mode}`}>Articles</p>
                 <p className="section-title">Related Articles</p>
             </div>
-            <div className="blog-container">
+            <div className={`blog-container ${props.mode}`}>
                 <OwlCarousel className='owl-theme' autoplay nav={true} margin={20} autoplayTimeout="3000" navText={navText} dots={false} autoplayHoverPause loop center responsive={owlRespoinsive}>
                     {
                         data[0].blog.map((blog, index) => {
