@@ -332,6 +332,7 @@ footer .all-rights {
     bottom: 0%;
     right: 0%;
     z-index: 100;
+    padding: 20px;
 }
 
 /* Carousel */
@@ -1541,6 +1542,9 @@ hr {
     }
 }
 @media (max-width: 700px) {
+    .description img {
+        max-width: 100%;
+    }
     .px-5 {
         padding: 0!important;
     }
