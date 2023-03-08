@@ -1,4 +1,4 @@
-import Banner from 'components/Jobs/Banner'
+import Banner from 'components/jobs/Banner'
 import Head from 'next/head'
 import React from 'react'
 import JobsContainer from 'components/jobs/JobsContainer';
