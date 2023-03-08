@@ -9,7 +9,6 @@ const App = ({ Component, pageProps }) => {
     const toggleMode = () => setMode((mode) => mode == "light" ? "dark" : "light");
     const [lang, setLang] = useState("en");
     const changeLang = (lang) => setLang(lang)
-    console.log(mode);
     return (
         <>
             <Head>
