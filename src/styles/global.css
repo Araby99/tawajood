@@ -1460,7 +1460,13 @@ hr {
     font-size: 32px;
     color: #315D83;
 }
-
+.spinner {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Media Query (Responive) */
 @media (max-width: 1550px) {
     .why-container {

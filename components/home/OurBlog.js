@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import data from '@/pages/data/data';
 import Link from 'next/link';
 
 const OurBlog = (props) => {
@@ -30,7 +29,7 @@ const OurBlog = (props) => {
                 <div className={`blog-container ${props.mode}`}>
                     <OwlCarousel className='owl-theme' dots={false} autoplay autoplayTimeout="3000" autoplayHoverPause loop margin={50} center responsive={owlRespoinsive}>
                         {
-                            data[0].blog.map((blog, index) => {
+                            props.data[0].blog.map((blog, index) => {
                                 return (
                                     <div className="item" key={index}>
                                         <div className="cover">

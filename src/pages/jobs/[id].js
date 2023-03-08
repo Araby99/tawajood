@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import data from '@/pages/data/data';
 import Head from 'next/head';
 import Link from 'next/link';
 import Alert from 'react-bootstrap/Alert';
@@ -20,7 +19,7 @@ const Job = (props) => {
             ? window.location.origin
             : '';
     const URL = `${origin}${router.asPath}`;
-    const job = data[0].jobs[id - 1];
+    const job = props.data[0].jobs[id - 1];
     useEffect(() => {
         if (!job) {
             router.push("/404");

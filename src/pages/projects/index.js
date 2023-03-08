@@ -3,7 +3,6 @@ import ProjectLifeCycle from 'components/projects/ProjectLifeCycle'
 import ProjectsContainer from 'components/projects/ProjectsContainer'
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
-import data from '@/pages/data/data';
 import dynamic from 'next/dynamic';
 const Overlay = dynamic(import('components/projects/Overlay'), { ssr: false });
 
@@ -15,9 +14,9 @@ const Projects = (props) => {
     const [overlayData, setOverlayData] = useState()
     useEffect(() => {
         if (type == "mobile") {
-            setOverlayData(data[0].projects.mobile)
+            setOverlayData(props.data[0].projects.mobile)
         } else {
-            setOverlayData(data[0].projects.website)
+            setOverlayData(props.data[0].projects.website)
         }
     }, [type])
 
@@ -29,7 +28,7 @@ const Projects = (props) => {
             <div className='projects'>
                 <Banner />
                 <ProjectLifeCycle />
-                <ProjectsContainer lang={props.lang} project={data[0].projects} setType={setType} type={type} setOverlayActive={setOverlayActive} setId={setId} folderName={folderName} />
+                <ProjectsContainer lang={props.lang} project={props.data[0].projects} setType={setType} type={type} setOverlayActive={setOverlayActive} setId={setId} folderName={folderName} />
                 {overlayActive && <Overlay setOverlayActive={setOverlayActive} project={overlayData} type={type} id={id} folderName={folderName} />}
             </div>
         </>

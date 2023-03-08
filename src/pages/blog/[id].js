@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import data from '@/pages/data/data';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
@@ -22,7 +21,7 @@ const Blog = (props) => {
             ? window.location.origin
             : '';
     const URL = `${origin}${router.asPath}`;
-    const blog = data[0].blog[id - 1];
+    const blog = props.data[0].blog[id - 1];
     useEffect(() => {
         if (!blog) {
             router.push("/404");
