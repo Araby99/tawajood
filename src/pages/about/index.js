@@ -14,7 +14,7 @@ const About = (props) => {
                 <title>Tawajood | About Us</title>
             </Head>
             <div className="about">
-                <Banner />
+                <Banner {...props} />
                 <Description {...props} />
                 <hr />
                 <OurMissionAndVision {...props} />

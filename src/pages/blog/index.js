@@ -14,7 +14,7 @@ const Blogs = (props) => {
                 <title>Tawajood | Blog</title>
             </Head>
             <div className='blog'>
-                <Banner blogTags={props.data[0].blogTags} filterActive={filterActive} filter={filter} />
+                <Banner style={props.style} blogTags={props.data[0].blogTags} filterActive={filterActive} filter={filter} />
                 <BlogContainer mode={props.mode} lang={props.lang} blogs={props.data[0].blog} filterActive={filterActive} setFilterActive={setFilterActive} />
             </div>
         </>

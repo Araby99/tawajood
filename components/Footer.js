@@ -36,42 +36,42 @@ const Footer = (props) => {
                         <p className="title fs-1 font-cairo-bold text-white"><span>contact us</span></p>
                         <div className="d-flex flex-column gap-1">
                             <div className="contact-item d-flex justify-content-between align-items-center">
-                                <p className="contact-value font-cairo-MontMedium m-0 text-white">+201024848723</p>
+                                <Link href={"tel:+201024848723"} className="contact-value font-cairo-MontMedium m-0 text-white">+201024848723</Link>
                                 <div className="contact-icon">
                                     <div className="background"></div>
                                     <i className="fas fa-phone"></i>
                                 </div>
                             </div>
                             <div className="contact-item d-flex justify-content-between align-items-center">
-                                <p className="contact-value font-cairo-MontMedium m-0 text-white">info@tawajood.com</p>
+                                <Link href={"mailto:info@tawajood.com"} className="contact-value font-cairo-MontMedium m-0 text-white">info@tawajood.com</Link>
                                 <div className="contact-icon">
                                     <div className="background"></div>
                                     <i className="far fa-envelope"></i>
                                 </div>
                             </div>
                             <div className="contact-item d-flex justify-content-between align-items-center">
-                                <p className="contact-value font-cairo-MontMedium m-0 text-white">@Tawajood</p>
+                                <Link target={"_blank"} href={"https://www.linkedin.com/company/tawajood/"} className="contact-value font-cairo-MontMedium m-0 text-white">@Tawajood</Link>
                                 <div className="contact-icon">
                                     <div className="background"></div>
                                     <i className="fab fa-linkedin-in"></i>
                                 </div>
                             </div>
                             <div className="contact-item d-flex justify-content-between align-items-center">
-                                <p className="contact-value font-cairo-MontMedium m-0 text-white">@tawajoodco</p>
+                                <Link target={"_blank"} href={"https://www.instagram.com/tawajoodco/"} className="contact-value font-cairo-MontMedium m-0 text-white">@tawajoodco</Link>
                                 <div className="contact-icon">
                                     <div className="background"></div>
                                     <i className="fab fa-instagram"></i>
                                 </div>
                             </div>
                             <div className="contact-item d-flex justify-content-between align-items-center">
-                                <p className="contact-value font-cairo-MontMedium m-0 text-white">@tawajoodcompany</p>
+                                <Link target={"_blank"} href={"https://www.behance.net/tawajoodcompany"} className="contact-value font-cairo-MontMedium m-0 text-white">@tawajoodcompany</Link>
                                 <div className="contact-icon">
                                     <div className="background"></div>
                                     <i className="fab fa-behance"></i>
                                 </div>
                             </div>
                             <div className="contact-item d-flex justify-content-between align-items-center">
-                                <p className="contact-value font-cairo-MontMedium m-0 text-white">@Tawajood</p>
+                                <Link target={"_blank"} href={"https://www.facebook.com/tawajood"} className="contact-value font-cairo-MontMedium m-0 text-white">@Tawajood</Link>
                                 <div className="contact-icon">
                                     <div className="background"></div>
                                     <i className="fab fa-facebook-f"></i>
@@ -81,7 +81,7 @@ const Footer = (props) => {
                     </div>
                 </div>
                 <p className='all-rights text-center font-cairo-semibold text-white'>
-                    All Rights Reserved 2023
+                    All Rights Reserved {new Date().getFullYear()}
                 </p>
             </Container>
         </footer>

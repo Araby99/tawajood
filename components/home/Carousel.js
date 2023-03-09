@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 
-const CarouselSection = () => {
+const CarouselSection = (props) => {
     const [index, setIndex] = useState(0);
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
     };
+
     return (
-        <Carousel controls={false} activeIndex={index} onSelect={handleSelect}>
+        <Carousel controls={false} activeIndex={index} onSelect={handleSelect} style={props.style}>
             <Carousel.Item>
                 <img
                     className="d-block w-100"

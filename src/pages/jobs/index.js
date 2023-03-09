@@ -10,7 +10,7 @@ const index = (props) => {
                 <title>Tawajood | Jobs</title>
             </Head>
             <div className='blog'>
-                <Banner />
+                <Banner {...props} />
                 <JobsContainer mode={props.mode} jobs={props.data[0].jobs} />
             </div>
         </>

@@ -31,6 +31,9 @@ const Overlay = ({ project, type, id, setOverlayActive, folderName }) => {
         <div className={`project-info ${type}`}>
             {project && (
                 <div className="overlay">
+                    <div className="close" onClick={() => setOverlayActive(false)}>
+                        <i className="fas fa-times"></i>
+                    </div>
                     <div className="background" onClick={() => setOverlayActive(false)}></div>
                     <OwlCarousel className='owl-theme' autoplay nav={true} autoplayTimeout="3000" navText={navTextWhite} dots={false} margin={100} autoplayHoverPause loop center responsive={owlRespoinsive}>
                         {project[id].images.map((image, index) => (

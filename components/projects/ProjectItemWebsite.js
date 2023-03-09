@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import ReactWOW from 'react-wow'
 
 const ProjectItem = ({ lang, top, type, project, folderName, setId, setOverlayActive }) => {
     const showInfo = (id) => {
@@ -26,24 +27,26 @@ const ProjectItem = ({ lang, top, type, project, folderName, setId, setOverlayAc
             <div className={`projects py-5 ${type}`}>
                 {
                     visibleProjects && visibleProjects.map((project, index) => (
-                        <div className="project-item" key={index}>
-                            <div className="project-cover">
-                                <img src={`/images/projects/website/${folderName(project.name)}/${project.cover}`} alt="Project Cover" />
-                                <div className="project-action">
-                                    <Link href="" target="_blank">
-                                        <div className="icon">
-                                            <i className="fas fa-search"></i>
+                        <ReactWOW scroll={true} duration="2s" animation='fadeIn' key={index}>
+                            <div className="project-item">
+                                <div className="project-cover">
+                                    <img src={`/images/projects/website/${folderName(project.name)}/${project.cover}`} alt="Project Cover" />
+                                    <div className="project-action">
+                                        <Link href="" target="_blank">
+                                            <div className="icon">
+                                                <i className="fas fa-search"></i>
+                                            </div>
+                                        </Link>
+                                        <div className="icon" onClick={() => showInfo(project.id - 1)}>
+                                            <i className="far fa-eye"></i>
                                         </div>
-                                    </Link>
-                                    <div className="icon" onClick={() => showInfo(project.id - 1)}>
-                                        <i className="far fa-eye"></i>
                                     </div>
                                 </div>
+                                <div className="project-name">
+                                    <span>{project.name}</span>
+                                </div>
                             </div>
-                            <div className="project-name">
-                                <span>{project.name}</span>
-                            </div>
-                        </div>
+                        </ReactWOW>
                     ))
                 }
             </div>

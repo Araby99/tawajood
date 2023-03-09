@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Layout from './Layout';
 import '../styles/global.css'
 import '../styles/fonts.css'
@@ -20,6 +20,8 @@ const App = ({ Component, pageProps }) => {
     const toggleMode = () => setMode((mode) => mode == "light" ? "dark" : "light");
     const [lang, setLang] = useState("en");
     const changeLang = (lang) => setLang(lang)
+    const navHeight = useRef()
+    const [style, setStyle] = useState();
     if (data == undefined) {
         return (
             <Spinner />
@@ -30,8 +32,8 @@ const App = ({ Component, pageProps }) => {
             <Head>
                 <link rel="icon" type="image/png" href="/images/logo/logo-dark.png" />
             </Head>
-            <Layout mode={mode} toggleMode={toggleMode} lang={lang} changeLang={changeLang}>
-                <Component data={data} mode={mode} toggleMode={toggleMode} lang={lang} changeLang={changeLang} {...pageProps} />
+            <Layout setStyle={setStyle} navHeight={navHeight} mode={mode} toggleMode={toggleMode} lang={lang} changeLang={changeLang}>
+                <Component style={style} navHeight={navHeight} data={data} mode={mode} toggleMode={toggleMode} lang={lang} changeLang={changeLang} {...pageProps} />
             </Layout>
         </>
     )

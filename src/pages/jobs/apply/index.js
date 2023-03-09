@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form";
 import Head from 'next/head';
 
-const Apply = () => {
+const Apply = (props) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [overlay, setOverlay] = useState(false)
     const onSubmit = data => {
@@ -15,13 +15,11 @@ const Apply = () => {
         file.current.lastChild[5].onmouseover = () => {
             if (file.current.lastChild[5].value == "") {
                 file.current.lastChild[5].type = "file"
-                file.current.lastChild[5].disabled = false
             }
         }
         file.current.lastChild[5].onmouseout = () => {
             if (file.current.lastChild[5].value == "") {
                 file.current.lastChild[5].type = "text"
-                file.current.lastChild[5].disabled = true
             }
         }
     }, [file])
@@ -30,6 +28,7 @@ const Apply = () => {
             <Head>
                 <title>Tawajood | Apply</title>
             </Head>
+            <div style={props.style}></div>
             <div ref={file} className='form apply d-flex flex-column gap-5 m-5 gap-5 p-5'>
                 <div className="title">
                     <p>Apply Now</p>
@@ -49,7 +48,13 @@ const Apply = () => {
                             {errors.email && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
-                            <Form.Control type="number" placeholder="Your Notice Period" {...register("notice", { required: true })} />
+                            <Form.Select aria-label="Default select example" defaultValue=""{...register("notice", { required: true })}>
+                                <option disabled hidden value="">Years of Experience</option>
+                                <option value="1">One Week</option>
+                                <option value="2">Two Weeks</option>
+                                <option value="3">Three Weeks</option>
+                                <option value="4">Four Weeks</option>
+                            </Form.Select>
                             {errors.notice && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
@@ -57,7 +62,7 @@ const Apply = () => {
                             {errors.number && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
-                            <Form.Control type="text" placeholder="Your Resume" disabled {...register("resume", { required: true })} />
+                            <Form.Control type="text" placeholder="Your Resume" {...register("resume", { required: true })} />
                             {errors.resume && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>

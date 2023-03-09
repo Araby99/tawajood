@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Banner = ({ blogTags, filter, filterActive }) => {
+const Banner = ({ blogTags, filter, filterActive, style }) => {
     return (
-        <div className='banner py-5 d-flex justify-content-center align-items-center flex-column'>
+        <div className='banner py-5 d-flex justify-content-center align-items-center flex-column' style={style}>
             <div className="current-path d-flex gap-3">
                 <Link href="/">Home</Link>
                 <span> | </span>

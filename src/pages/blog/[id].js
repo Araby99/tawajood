@@ -44,7 +44,7 @@ const Blog = (props) => {
                         <Head>
                             <title>Tawajood | {blog.title}</title>
                         </Head>
-                        <div className={`blog-item ${props.mode}`}>
+                        <div style={props.style} className={`blog-item ${props.mode}`}>
                             {alert && (
                                 <Alert variant="success" {...fadeProps} className="alert">
                                     Link Copied to clipboard !
@@ -97,16 +97,6 @@ const Blog = (props) => {
                                 </div>
                             </div>
                             <div className="blog-content p-5">
-                                <div className="tags d-flex gap-5">
-                                    {blog.tags.map((tag, index) => (
-                                        <Link key={index} href={{
-                                            pathname: "/blog",
-                                            query: {
-                                                tag: tag
-                                            }
-                                        }}>#{tag}</Link>
-                                    ))}
-                                </div>
                                 <div className="content py-4">
                                     {blog.content}
                                 </div>

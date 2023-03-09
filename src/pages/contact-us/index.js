@@ -12,7 +12,7 @@ const ContactUs = (props) => {
                 <title>Tawajood | Contact Us</title>
             </Head>
             <div className='contact-us'>
-                <Banner />
+                <Banner {...props} />
                 <Form mode={props.mode} />
                 <ContactInfo />
                 <Map />

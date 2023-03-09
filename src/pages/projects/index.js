@@ -26,7 +26,7 @@ const Projects = (props) => {
                 <title>Tawajood | Projects</title>
             </Head>
             <div className='projects'>
-                <Banner />
+                <Banner {...props} />
                 <ProjectLifeCycle />
                 <ProjectsContainer lang={props.lang} project={props.data[0].projects} setType={setType} type={type} setOverlayActive={setOverlayActive} setId={setId} folderName={folderName} />
                 {overlayActive && <Overlay setOverlayActive={setOverlayActive} project={overlayData} type={type} id={id} folderName={folderName} />}

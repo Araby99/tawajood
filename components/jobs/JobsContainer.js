@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 const JobContainer = ({ mode, jobs }) => {
     const [visibleJobs, setVisibleJobs] = useState(jobs);
     const [activePage, setActivePage] = useState(1)
-    const blogsByPage = 9;
+    const blogsByPage = 8;
     const allBlogs = jobs.length;
     const numberOfPages = Math.ceil(allBlogs / blogsByPage);
     let pages = [];

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 const BlogContainer = ({ mode, lang, blogs, filterActive, setFilterActive }) => {
     const [visibleBlogs, setVisibleBlogs] = useState(blogs);
     const [activePage, setActivePage] = useState(1)
-    const blogsByPage = 9;
+    const blogsByPage = 8;
     const allBlogs = blogs.length;
     const numberOfPages = Math.ceil(allBlogs / blogsByPage);
     let pages = [];
@@ -36,15 +36,6 @@ const BlogContainer = ({ mode, lang, blogs, filterActive, setFilterActive }) => 
                                 <p className="title">
                                     <Link href={`./blog/${blog.id}`} className="title m-0">{blog.title}</Link>
                                 </p>
-                                <div className="tags">
-                                    {
-                                        blog.tags.map((tag, index) => {
-                                            return (
-                                                <p key={index} onClick={() => setFilterActive(tag)}>#{tag}</p>
-                                            )
-                                        })
-                                    }
-                                </div>
                                 <p className="content">{blog.content.slice(0, 100)}...</p>
                             </div>
                         )

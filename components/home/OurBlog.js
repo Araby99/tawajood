@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const OurBlog = (props) => {
     const owlRespoinsive = {
@@ -14,9 +15,29 @@ const OurBlog = (props) => {
         600: {
             items: 2
         },
+        1000: {
+            items: 3
+        },
         1600: {
-            items: 3,
+            items: 4,
             margin: 50
+        }
+    }
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+    const router = useRouter()
+    const isMobile = width <= 768;
+    const navIfMobile = link => {
+        if (isMobile) {
+            router.push(link);
         }
     }
     return (
@@ -31,7 +52,7 @@ const OurBlog = (props) => {
                         {
                             props.data[0].blog.map((blog, index) => {
                                 return (
-                                    <div className="item" key={index}>
+                                    <div className="item" key={index} onClick={() => navIfMobile(`/blog/${blog.id}`)}>
                                         <div className="cover">
                                             <img src={blog.cover} alt="Cover" />
                                         </div>
@@ -40,15 +61,6 @@ const OurBlog = (props) => {
                                             <p className='m-0'>{blog.date}</p>
                                         </div>
                                         <p className="title">{blog.title}</p>
-                                        <div className="tags">
-                                            {
-                                                blog.tags.map((tag, index) => {
-                                                    return (
-                                                        <p key={index}>#{tag}</p>
-                                                    )
-                                                })
-                                            }
-                                        </div>
                                         <p className="content">{blog.content.slice(0, 100)}...</p>
                                         <div className="read"><Link href={`/blog/${blog.id}`}><img src="/images/icons/arrow-right-2.png" alt="Arrow" /></Link></div>
                                     </div>

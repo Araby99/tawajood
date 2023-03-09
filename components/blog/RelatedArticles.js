@@ -42,20 +42,6 @@ const RelatedArticles = (props) => {
                                     <Link href={`/blog/${blog.id}`}>
                                         <p className="title">{blog.title}</p>
                                     </Link>
-                                    <div className="tags">
-                                        {
-                                            blog.tags.map((tag, index) => {
-                                                return (
-                                                    <Link key={index} href={{
-                                                        pathname: "/blog",
-                                                        query: {
-                                                            tag: tag
-                                                        }
-                                                    }}>#{tag}</Link>
-                                                )
-                                            })
-                                        }
-                                    </div>
                                     <p className="content">{blog.content.slice(0, 100)}...</p>
                                 </div>
                             )
