@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const RelatedArticles = (props) => {
     const owlRespoinsive = {
@@ -20,6 +21,23 @@ const RelatedArticles = (props) => {
         '<span class="arrow prev"><img src="/images/icons/arrow-left-2.png" alt"Arrow" /></span>',
         '<span class="arrow next"><img src="/images/icons/arrow-right-2.png" alt"Arrow" /></span>'
     ]
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+    const router = useRouter()
+    const isMobile = width <= 768;
+    const navIfMobile = link => {
+        if (isMobile) {
+            router.push(link);
+        }
+    }
     return (
         <div className='our-company-profile related py-5 w-75 m-auto'>
             <div className="section-main-title">
@@ -31,7 +49,7 @@ const RelatedArticles = (props) => {
                     {
                         props.data[0].blog.map((blog, index) => {
                             return (
-                                <div className="item" key={index}>
+                                <div className="item" key={index} onClick={() => navIfMobile(`/blog/${blog.id}`)}>
                                     <div className="cover">
                                         <img src={blog.cover} alt="Cover" />
                                     </div>

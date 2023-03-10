@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 
-const BlogContainer = ({ mode, lang, blogs, filterActive, setFilterActive }) => {
+const BlogContainer = ({ mode, lang, blogs, filterActive }) => {
     const [visibleBlogs, setVisibleBlogs] = useState(blogs);
     const [activePage, setActivePage] = useState(1)
     const blogsByPage = 8;
@@ -17,7 +18,23 @@ const BlogContainer = ({ mode, lang, blogs, filterActive, setFilterActive }) => 
             behavior: 'smooth',
         });
     }
-
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+    const router = useRouter()
+    const isMobile = width <= 768;
+    const navIfMobile = link => {
+        if (isMobile) {
+            router.push(link);
+        }
+    }
 
     return (
         <div className="blogs">
@@ -25,7 +42,7 @@ const BlogContainer = ({ mode, lang, blogs, filterActive, setFilterActive }) => 
                 {
                     visibleBlogs.map((blog, index) => {
                         return (
-                            <div className={`item ${lang}`} key={index}>
+                            <div className={`item ${lang}`} key={index} onClick={() => navIfMobile(`/blog/${blog.id}`)}>
                                 <div className="cover">
                                     <img src={blog.cover} alt="Cover" />
                                 </div>
@@ -34,7 +51,7 @@ const BlogContainer = ({ mode, lang, blogs, filterActive, setFilterActive }) => 
                                     <p className='m-0'>{blog.date}</p>
                                 </div>
                                 <p className="title">
-                                    <Link href={`./blog/${blog.id}`} className="title m-0">{blog.title}</Link>
+                                    <Link href={`/blog/${blog.id}`} className="title m-0">{blog.title}</Link>
                                 </p>
                                 <p className="content">{blog.content.slice(0, 100)}...</p>
                             </div>

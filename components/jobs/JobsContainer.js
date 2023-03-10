@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 
 const JobContainer = ({ mode, jobs }) => {
@@ -17,7 +18,23 @@ const JobContainer = ({ mode, jobs }) => {
             behavior: 'smooth',
         });
     }
-
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+    const router = useRouter()
+    const isMobile = width <= 768;
+    const navIfMobile = link => {
+        if (isMobile) {
+            router.push(link);
+        }
+    }
 
     return (
         <div className="blogs jobs">
@@ -25,7 +42,7 @@ const JobContainer = ({ mode, jobs }) => {
                 {
                     visibleJobs.map((job, index) => {
                         return (
-                            <div className="item" key={index}>
+                            <div className="item" key={index} onClick={() => navIfMobile(`/jobs/${job.id}`)}>
                                 <div className="cover">
                                     <img src={job.cover} alt="Cover" />
                                 </div>

@@ -1582,6 +1582,9 @@ hr {
     }
 }
 @media (max-width: 700px) {
+    nav.navigate .container-fluid {
+        margin: 0 30px!important;
+    }
     .description img {
         max-width: 100%;
     }
