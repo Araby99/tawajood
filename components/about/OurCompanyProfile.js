@@ -12,12 +12,12 @@ const OurCompanyProfile = (props) => {
         },
     }
     const navText = [
-        '<span class="arrow prev"><img src="/images/icons/arrow-left-2.png" alt"Arrow" /></span>',
-        '<span class="arrow next"><img src="/images/icons/arrow-right-2.png" alt"Arrow" /></span>'
+        '<span class="arrow prev"><img src="/images/icons/arrow-left-2.png" alt"Left Arrow" /></span>',
+        '<span class="arrow next"><img src="/images/icons/arrow-right-2.png" alt"Right Arrow" /></span>'
     ]
     const navTextWhite = [
-        '<span class="arrow prev"><img src="/images/icons/arrow-left-white.png" alt"Arrow" /></span>',
-        '<span class="arrow next"><img src="/images/icons/arrow-right-white.png" alt"Arrow" /></span>'
+        '<span class="arrow prev"><img src="/images/icons/arrow-left-white.png" alt"Left Arrow" /></span>',
+        '<span class="arrow next"><img src="/images/icons/arrow-right-white.png" alt"Right Arrow" /></span>'
     ]
     return (
         <div className='our-company-profile py-5 w-75 m-auto'>

@@ -24,8 +24,8 @@ const MeetOurTeam = (props) => {
     const Carousel = useRef(null)
     useEffect(() => Carousel.current && setCenter(Math.round(Carousel.current.props.children.length / 2) - 1), [Carousel])
     const navText = [
-        '<span class="arrow prev"><img src="/images/icons/arrow-left-2.png" alt"Arrow" /></span>',
-        '<span class="arrow next"><img src="/images/icons/arrow-right-2.png" alt"Arrow" /></span>'
+        '<span class="arrow prev"><img src="/images/icons/arrow-left-2.png" alt"Left Arrow" /></span>',
+        '<span class="arrow next"><img src="/images/icons/arrow-right-2.png" alt"Right Arrow" /></span>'
     ]
     return (
         <div className={`meet-our-team py-5 ${props.mode}`}>
