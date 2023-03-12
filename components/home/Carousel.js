@@ -8,7 +8,7 @@ const CarouselSection = (props) => {
     };
 
     return (
-        <Carousel controls={false} activeIndex={index} onSelect={handleSelect} style={props.style}>
+        <Carousel controls={false} activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item>
                 <img
                     className="d-block w-100"

@@ -32,7 +32,7 @@ const App = ({ Component, pageProps }) => {
             <Head>
                 <link rel="icon" type="image/png" href="/images/logo/logo-dark.png" />
             </Head>
-            <Layout setStyle={setStyle} navHeight={navHeight} mode={mode} toggleMode={toggleMode} lang={lang} changeLang={changeLang}>
+            <Layout style={style} setStyle={setStyle} navHeight={navHeight} mode={mode} toggleMode={toggleMode} lang={lang} changeLang={changeLang}>
                 <Component style={style} navHeight={navHeight} data={data} mode={mode} toggleMode={toggleMode} lang={lang} changeLang={changeLang} {...pageProps} />
             </Layout>
         </>

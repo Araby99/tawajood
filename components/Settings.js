@@ -6,9 +6,19 @@ const Settings = (props) => {
     useEffect(() => {
         setSetWid(settingWidth.current.clientWidth);
     }, [])
-
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+    const isMobile = width <= 768;
     return (
-        <div className='setting d-flex align-items-start gap-1' style={{ left: `-${setWid}px` }} onMouseOver={() => setSetWid(0)} onMouseOut={() => setSetWid(settingWidth.current.clientWidth)}>
+        <div className='setting d-flex align-items-start gap-1' style={{ left: `-${setWid}px` }} onMouseOver={() => !isMobile && setSetWid(0)} onMouseOut={() => !isMobile && setSetWid(settingWidth.current.clientWidth)} onClick={() => isMobile && (setWid == 0 ? setSetWid(settingWidth.current.clientWidth) : setSetWid(0))}>
             <div className="contect d-flex flex-column gap-4 px-3 py-4" ref={settingWidth}>
                 <div className="language d-flex gap-3 font-cairo-bold text-white">
                     <button className={`lang ${props.lang == "en" && "active"}`} onClick={() => props.changeLang("en")}>EN</button> |

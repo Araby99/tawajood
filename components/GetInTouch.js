@@ -7,10 +7,20 @@ const GetInTouch = () => {
     useEffect(() => {
         setSetWid(settingWidth.current.clientWidth);
     }, [])
-
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+    const isMobile = width <= 768;
     return (
 
-        <div className='get-in-touch d-flex gap-1' style={{ right: `-${setWid}px` }} onMouseOver={() => setSetWid(0)} onMouseOut={() => setSetWid(settingWidth.current.clientWidth)}>
+        <div className='get-in-touch d-flex gap-1' style={{ right: `-${setWid}px` }} onMouseOver={() => !isMobile && setSetWid(0)} onMouseOut={() => !isMobile && setSetWid(settingWidth.current.clientWidth)} onClick={() => isMobile && (setWid == 0 ? setSetWid(settingWidth.current.clientWidth) : setSetWid(0))}>
             <div className={`title ${setWid !== 0 && "active"} px-3 py-5 d-flex justify-contect-center`}>
                 <p className='m-0 font-cairo-bold'>get in touch</p>
             </div>

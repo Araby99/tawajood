@@ -44,7 +44,7 @@ const Blog = (props) => {
                         <Head>
                             <title>Tawajood | {blog.title}</title>
                         </Head>
-                        <div style={props.style} className={`blog-item ${props.mode}`}>
+                        <div className={`blog-item ${props.mode}`}>
                             {alert && (
                                 <Alert variant="success" {...fadeProps} className="alert">
                                     Link Copied to clipboard !

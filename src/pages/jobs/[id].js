@@ -47,7 +47,7 @@ const Job = (props) => {
                                     Link Copied to clipboard !
                                 </Alert>
                             )}
-                            <div style={props.style} className="banner py-4 px-5 d-flex flex-column justify-content-between blog-banner">
+                            <div className="banner py-4 px-5 d-flex flex-column justify-content-between blog-banner">
                                 <div className="overlay" style={{ backgroundImage: `url(${job.cover})` }}></div>
                                 <div className="current-path d-flex justify-content-center gap-3">
                                     <Link href="/">Home</Link>

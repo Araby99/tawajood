@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form";
 import Head from 'next/head';
 
-const Apply = (props) => {
+const Apply = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [overlay, setOverlay] = useState(false)
     const onSubmit = data => {
@@ -28,7 +28,6 @@ const Apply = (props) => {
             <Head>
                 <title>Tawajood | Apply</title>
             </Head>
-            <div style={props.style}></div>
             <div ref={file} className='form apply d-flex flex-column gap-5 m-5 gap-5 p-5'>
                 <div className="title">
                     <p>Apply Now</p>

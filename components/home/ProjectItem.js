@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const ProjectItem = ({ theme, step, name, image, link }) => {
+const ProjectItem = ({ theme, step, name, image, link, setStep, index }) => {
     if (image) {
         return (
             <div className="project-item image">
@@ -10,7 +10,7 @@ const ProjectItem = ({ theme, step, name, image, link }) => {
         )
     }
     return (
-        <div className={`project-item text theme-${theme}`}>
+        <div className={`project-item text theme-${theme}`} onClick={() => setStep && setStep(index)}>
             <p className="step-number">{step}</p>
             <p className="step-name">{name}</p>
             {link && <Link href="/projects"><span>See Our Projects</span> <img src={`/images/icons/arrow-right-${theme}.png`} alt="Arrow" /></Link>}

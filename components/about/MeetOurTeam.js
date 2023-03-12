@@ -37,7 +37,13 @@ const MeetOurTeam = (props) => {
                 We can cover a part of your project (e.g., back-end development) and provide regular progress reports. We save you time and money by expanding your software development capabilities and minimizing management efforts. or we can work together with your internal team until project delivery.
             </p>
             <div className="level pb-3">
-                <OwlCarousel className='owl-theme' margin={40} ref={Carousel} dots={false} center nav={true} navText={navText} responsive={owlRespoinsive} startPosition={center}>
+                <OwlCarousel className='owl-theme' margin={40} ref={Carousel} dots={false} nav={true} navText={navText} responsive={owlRespoinsive}>
+                    <div className="item">
+                        <Member name="Muhammad Mourad" position="CEO | Technical Manager" image="/images/about/meet-our-team/muhammad.png" />
+                    </div>
+                    <div className="item">
+                        <Member name="Esraa Ali Elshafiey" position="Operations Manager" image="/images/about/meet-our-team/esraa.png" />
+                    </div>
                     <div className="item">
                         <Member name="Ahmed Mostafa" position="IOS Developer" image="/images/about/meet-our-team/ahmed.png" />
                     </div>
@@ -49,12 +55,6 @@ const MeetOurTeam = (props) => {
                     </div>
                     <div className="item">
                         <Member name="Islam Essam" position="Android Developer" image="/images/about/meet-our-team/islam.png" />
-                    </div>
-                    <div className="item">
-                        <Member name="Esraa Ali Elshafiey" position="Operations Manager" image="/images/about/meet-our-team/esraa.png" />
-                    </div>
-                    <div className="item">
-                        <Member name="Muhammad Mourad" position="CEO | Technical Manager" image="/images/about/meet-our-team/muhammad.png" />
                     </div>
                     <div className="item">
                         <Member name="Nada Moawaad" position="Android Developer" image="/images/about/meet-our-team/nada.png" />

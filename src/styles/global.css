@@ -51,7 +51,7 @@ nav.navigate .navbar-nav > *:hover::after {
 nav.navigate .navbar-nav > *.light {
     color: #315D83;
 }
-nav.navigate .navbar-nav > *.light:nth-child(1) {
+nav.navigate .navbar-nav > *.light.hiring {
     color: #5EA3FF;
     animation: fadeInOut 1.2s infinite cubic-bezier(0, 0, 1, 1);
 }
@@ -1232,6 +1232,7 @@ hr {
 }
 .project-life-cycle.project-page .project-plan .project-item {
     padding-bottom: 150px;
+    cursor: pointer;
 }
 .project-info .overlay {
     position: fixed;
@@ -1582,8 +1583,8 @@ hr {
     }
 }
 @media (max-width: 700px) {
-    nav.navigate .container-fluid {
-        margin: 0 30px!important;
+    .banner {
+        padding: 25px 0 !important;
     }
     .description img {
         max-width: 100%;
@@ -1631,6 +1632,9 @@ hr {
     }
     .banner .title {
         margin: 0 30px;
+        text-align: center;
+        font-size: 3rem;
+        max-width: 80%;
     }
     .contact-us .banner .title {
         font-size: 2.5rem;
@@ -1691,7 +1695,7 @@ hr {
         gap: 0 20px;
     }
     .container-fluid.px-5 {
-        padding: 20px!important;
+        padding: 10px 20px!important;
     }
     .industries .type > div {
         font-size: 25px;
