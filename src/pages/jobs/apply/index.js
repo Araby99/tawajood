@@ -52,55 +52,12 @@ const Apply = () => {
                             {errors.fullName && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
-                            <Form.Control type="number" placeholder="Expected Salary" {...register("salary", { required: true })} />
-                            {errors.salary && <span className='text-danger'>*This field is required</span>}
-                        </div>
-                        <div>
-                            <Form.Control type="email" placeholder="Email" {...register("email", { required: true })} />
-                            {errors.email && <span className='text-danger'>*This field is required</span>}
-                        </div>
-                        <div>
-                            <div className='custom-select'>
-                                <div className="head d-flex justify-content-between" onClick={() => setIsOpen1(!isOpen1)}>
-                                    <input type="text" value={selectValue1} onChange={e => setSelectValue1(e.target.value)} {...register("notice", { required: true })} />
-                                    <span>{selectValue1 == "" ? "Notice Period" : selectValue1}</span>
-                                    <div className="toggle">
-                                        {
-                                            isOpen1 ? (
-                                                <i className="fas fa-angle-up"></i>
-                                            ) : (
-                                                <i className="fas fa-angle-down"></i>
-                                            )
-                                        }
-                                    </div>
-                                </div>
-                                {
-                                    isOpen1 && (
-                                        <div className="options">
-                                            <div className="option" onClick={() => handleOption1("1 week")}>1 week</div>
-                                            <div className="option" onClick={() => handleOption1("2 weeks")}>2 weeks</div>
-                                            <div className="option" onClick={() => handleOption1("3 weeks")}>3 weeks</div>
-                                            <div className="option" onClick={() => handleOption1("4 weeks")}>4 weeks</div>
-                                        </div>
-                                    )
-                                }
-                            </div>
-                            {errors.notice && <span className='text-danger'>*This field is required</span>}
-                        </div>
-                        <div>
                             <Form.Control type="tel" placeholder="Phone Number" {...register("number", { required: true })} />
                             {errors.number && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
-                            <Form.Control type="text" placeholder="Your Resume" {...register("resume", { required: true })} />
-                            {errors.resume && <span className='text-danger'>*This field is required</span>}
-                        </div>
-                        <div>
-                            <Form.Control type="text" placeholder="Portfolio Link | GitHub Link" {...register("portfolio", { required: true })} />
-                            {errors.portfolio && <span className='text-danger'>*This field is required</span>}
-                        </div>
-                        <div className='tell'>
-                            <Form.Control type="text" className='h-100' placeholder="Tell us about yourself and why you are applying to this job (optional)" />
+                            <Form.Control type="email" placeholder="Email" {...register("email", { required: true })} />
+                            {errors.email && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
                             <div className='custom-select'>
@@ -131,8 +88,49 @@ const Apply = () => {
                             {errors.years && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
-                            <Form.Control type="text" placeholder="Linkedin Account link" {...register("linkedin", { required: true })} />
-                            {errors.linkedin && <span className='text-danger'>*This field is required</span>}
+                            <Form.Control type="number" placeholder="Expected Salary" {...register("salary", { required: true })} />
+                            {errors.salary && <span className='text-danger'>*This field is required</span>}
+                        </div>
+                        <div>
+                            <Form.Control type="text" placeholder="Linkedin Account link" />
+                        </div>
+                        <div>
+                            <Form.Control type="text" placeholder="Portfolio Link | GitHub Link" />
+                        </div>
+                        <div>
+                            <div className='custom-select'>
+                                <div className="head d-flex justify-content-between" onClick={() => setIsOpen1(!isOpen1)}>
+                                    <input type="text" hidden value={selectValue1} onChange={e => setSelectValue1(e.target.value)} {...register("notice", { required: true })} />
+                                    <span>{selectValue1 == "" ? "Notice Period" : selectValue1}</span>
+                                    <div className="toggle">
+                                        {
+                                            isOpen1 ? (
+                                                <i className="fas fa-angle-up"></i>
+                                            ) : (
+                                                <i className="fas fa-angle-down"></i>
+                                            )
+                                        }
+                                    </div>
+                                </div>
+                                {
+                                    isOpen1 && (
+                                        <div className="options">
+                                            <div className="option" onClick={() => handleOption1("1 week")}>1 week</div>
+                                            <div className="option" onClick={() => handleOption1("2 weeks")}>2 weeks</div>
+                                            <div className="option" onClick={() => handleOption1("3 weeks")}>3 weeks</div>
+                                            <div className="option" onClick={() => handleOption1("4 weeks")}>4 weeks</div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            {errors.notice && <span className='text-danger'>*This field is required</span>}
+                        </div>
+                        <div>
+                            <Form.Control type="text" placeholder="Your Resume" {...register("resume", { required: true })} />
+                            {errors.resume && <span className='text-danger'>*This field is required</span>}
+                        </div>
+                        <div className='tell'>
+                            <Form.Control type="text" className='h-100' placeholder="Tell us about yourself and why you are applying to this job (optional)" />
                         </div>
                     </div>
                     <div className="submit">

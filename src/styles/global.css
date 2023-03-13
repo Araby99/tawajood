@@ -1000,7 +1000,7 @@ hr {
 .banner .filter .tag {
     border: solid 1px #fff;
     border-radius: 30px;
-    padding: 10px 35px;
+    padding: 15px 0;
     cursor: pointer;
     transition: .5s;
     color: #fff;
@@ -1674,6 +1674,25 @@ hr {
         transform: none;
         text-align: center;
     }
+    .project-life-cycle.project-page .description {
+        display: none;
+    }
+    .project-life-cycle.project-page .project-plan .project-item {
+        padding: 30px;
+        height: 300px;
+    }
+    .step-mobile {
+        background: #ccc;
+        color: #fff;
+        transition: .5s;
+        overflow: hidden;
+    }
+    .step-mobile p {
+        padding: 20px;
+        margin: 0;
+        color: #315D83;
+        font-size: 1.1rem;
+    }
 }
 @media (max-width: 600px) {
     .setting {
@@ -1748,6 +1767,7 @@ hr {
     }
     .container-fluid.px-5 {
         padding: 10px 20px!important;
+        gap: 10px;
     }
     .industries .type > div {
         font-size: 25px;
@@ -1814,7 +1834,8 @@ hr {
     }
     .blog-container .item .date {
         font-size: 14px;
-        padding: 15px 25px;
+        padding: 10px 20px;
+        gap: 5px;
     }
     .blog-container .item .date img {
         height: 20px;
@@ -1830,6 +1851,26 @@ hr {
     .share {
         padding: 20px 0!important;
         justify-content: center!important;
+    }
+    .contact-info {
+        width: 70%;
+        margin: auto;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .contact-info a {
+        width: 100%;
+    }
+    .contact-info .contact-item {
+        gap: 20px!important;
+    }
+    .contact-us .contact-item .icon {
+        height: 50px;
+        width: 50px;
+        font-size: 1.2rem;
+    }
+    #responsive-navbar-nav .navbar-nav {
+        padding: 30px;
     }
 }
 @media (max-width: 450px) {

@@ -19,7 +19,7 @@ const FormContainer = ({ mode }) => {
             <Form className='w-100 d-flex flex-column gap-4' onSubmit={handleSubmit(onSubmit)}>
                 <div className='custom-select'>
                     <div className="head d-flex justify-content-between" onClick={() => setIsOpen(!isOpen)}>
-                        <input type="text" value={selectValue} onChange={e => setSelectValue(e.target.value)} {...register("serviceType", { required: true })} />
+                        <input type="text" hidden value={selectValue} onChange={e => setSelectValue(e.target.value)} {...register("serviceType", { required: true })} />
                         <span>{selectValue == "" ? "Service Name" : selectValue}</span>
                         <div className="toggle">
                             {
