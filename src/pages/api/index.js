@@ -555,7 +555,71 @@ export default function handler(req, res) {
                         cover: "cover.png"
                     }
                 ]
-            }
+            },
+            industries: [
+                {
+                    index: 1,
+                    title: "Ecommerce And Retail",
+                    img: "ind-1.png"
+                },
+                {
+                    index: 2,
+                    title: "Logistics And Transportation",
+                    img: "ind-2.png"
+                },
+                {
+                    index: 3,
+                    title: "Food And Beverage",
+                    img: "ind-3.png"
+                },
+                {
+                    index: 4,
+                    title: "Health Care",
+                    img: "ind-4.png"
+                },
+                {
+                    index: 5,
+                    title: "Law And Consulting",
+                    img: "ind-5.png"
+                },
+                {
+                    index: 6,
+                    title: "Real Estate And Construction",
+                    img: "ind-6.png"
+                },
+            ],
+            technologies: [
+                {
+                    index: 1,
+                    title: "PHP",
+                    img: "tech-1.png"
+                },
+                {
+                    index: 2,
+                    title: "Swift",
+                    img: "tech-2.png"
+                },
+                {
+                    index: 3,
+                    title: "Kotlin",
+                    img: "tech-3.png"
+                },
+                {
+                    index: 4,
+                    title: "CSS",
+                    img: "tech-4.png"
+                },
+                {
+                    index: 5,
+                    title: "Java Script",
+                    img: "tech-5.png"
+                },
+                {
+                    index: 6,
+                    title: "React JS",
+                    img: "tech-6.png"
+                },
+            ]
         }
     ]
     res.status(200).json(data)

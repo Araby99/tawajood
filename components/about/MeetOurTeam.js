@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react';
 import dynamic from 'next/dynamic';
 const Member = dynamic(import('./Member'), { ssr: false });
 import OwlCarousel from 'react-owl-carousel';
@@ -20,9 +20,6 @@ const MeetOurTeam = (props) => {
             items: 6
         }
     }
-    const [center, setCenter] = useState();
-    const Carousel = useRef(null)
-    useEffect(() => Carousel.current && setCenter(Math.round(Carousel.current.props.children.length / 2) - 1), [Carousel])
     const navText = [
         '<span class="arrow prev"><img src="/images/icons/arrow-left-2.png" alt"Left Arrow" /></span>',
         '<span class="arrow next"><img src="/images/icons/arrow-right-2.png" alt"Right Arrow" /></span>'
@@ -37,7 +34,7 @@ const MeetOurTeam = (props) => {
                 We can cover a part of your project (e.g., back-end development) and provide regular progress reports. We save you time and money by expanding your software development capabilities and minimizing management efforts. or we can work together with your internal team until project delivery.
             </p>
             <div className="level pb-3">
-                <OwlCarousel className='owl-theme' margin={40} ref={Carousel} dots={false} nav={true} navText={navText} responsive={owlRespoinsive}>
+                <OwlCarousel className='owl-theme' margin={40} dots={false} nav={true} navText={navText} responsive={owlRespoinsive}>
                     <div className="item">
                         <Member name="Muhammad Mourad" position="CEO | Technical Manager" image="/images/about/meet-our-team/muhammad.png" />
                     </div>

@@ -11,7 +11,6 @@ const Layout = (props) => {
         const styles = { height: props.navHeight.current.clientHeight };
         props.setStyle(styles);
     }, [props.navHeight.current])
-    console.log(props.style);
     return (
         <div className={`bg-${props.mode == "light" ? "white" : "dark"} ${props.lang == "ar" ? "ar" : "en"} root`}>
             <Navbar mode={props.mode} navHeigh={props.navHeight} />

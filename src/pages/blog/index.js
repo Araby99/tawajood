@@ -1,8 +1,9 @@
-import Banner from 'components/blog/Banner'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import BlogContainer from 'components/blog/BlogContainer';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+const Banner = dynamic(import('components/blog/Banner'), { ssr: false });
 
 const Blogs = (props) => {
     const route = useRouter();

@@ -73,7 +73,7 @@ const Apply = () => {
                         </div>
                         <div>
                             <Form.Select aria-label="Default select example" defaultValue=""{...register("years", { required: true })}>
-                                <option disabled hidden value="">Years of Experience</option>
+                                <option disabled hidden value="">Notice Period</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>

@@ -6,6 +6,7 @@ import Description from 'components/about/Description'
 import OurMissionAndVision from 'components/about/OurMissionAndVision'
 const OurCompanyProfile = dynamic(import('components/about/OurCompanyProfile'), { ssr: false });
 const MeetOurTeam = dynamic(import('components/about/MeetOurTeam'), { ssr: false });
+const PdfReview = dynamic(import('components/about/Pdf'), { ssr: false });
 
 const About = (props) => {
     return (

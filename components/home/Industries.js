@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Container } from 'react-bootstrap'
-import IndustryItem from './IndustryItem';
+import Industry from './Industry';
+import Technology from './Technolgy';
 
 const Industries = (props) => {
+    const container = useRef(null)
     const [active, setActive] = useState("industries");
+    const [fullHeight, setFullHeight] = useState();
+    useEffect(() => {
+        if (container.current && props.navHeight.current) {
+            setFullHeight(container.current.offsetTop - props.navHeight.current.clientHeight - 50)
+        }
+
+    }, [container.current, props.navHeight.current])
+
     return (
-        <div className={`industries py-5 ${props.mode}`}>
+        <div className={`industries py-5 ${props.mode}`} ref={container}>
             <Container fluid className='px-5'>
                 <div className="d-flex justify-content-between type">
                     <div className={`w-100 text-center p-4 ${active == "industries" && "active"}`} onClick={e => setActive(e.target.innerHTML.toLowerCase())}>Industries</div>
@@ -14,29 +24,17 @@ const Industries = (props) => {
                 <p className="description py-5 text-center">
                     {active == "industries" ? "We have expertise in all the Industries that needed to deliver comprehensive services for companies across all Areas" : "Our software engineers have expertise in all the technologies needed to deliver comprehensive services for companies across industries."}
                 </p>
-                <div className="industries-container">
-                    {
-                        active == "industries" ? (
-                            <>
-                                <IndustryItem image="ind-1.png" text="Ecommerce And Retail" />
-                                <IndustryItem image="ind-2.png" text="Logistics And Transportation" />
-                                <IndustryItem image="ind-3.png" text="Food And Beverage" />
-                                <IndustryItem image="ind-4.png" text="Health Care" />
-                                <IndustryItem image="ind-5.png" text="Law And Consulting" />
-                                <IndustryItem image="ind-6.png" text="Real Estate And Construction" />
-                            </>
-                        ) : (
-                            <>
-                                <IndustryItem image="tech-1.png" text="PHP" />
-                                <IndustryItem image="tech-2.png" text="Swift" />
-                                <IndustryItem image="tech-3.png" text="Kotlin" />
-                                <IndustryItem image="tech-4.png" text="CSS" />
-                                <IndustryItem image="tech-5.png" text="Java Script" />
-                                <IndustryItem image="tech-6.png" text="React JS" />
-                            </>
-                        )
-                    }
-                </div>
+                {
+                    active == "industries" ? (
+                        <>
+                            <Industry top={fullHeight} data={props.data[0].industries} />
+                        </>
+                    ) : (
+                        <>
+                            <Technology top={fullHeight} data={props.data[0].technologies} />
+                        </>
+                    )
+                }
             </Container>
         </div>
     )
