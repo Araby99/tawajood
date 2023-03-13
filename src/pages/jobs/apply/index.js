@@ -23,16 +23,32 @@ const Apply = () => {
         setValue('years', value)
         clearErrors('years');
     }
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+    const isMobile = width <= 768;
     const file = useRef()
     useEffect(() => {
-        file.current.lastChild[5].onmouseover = () => {
-            if (file.current.lastChild[5].value == "") {
-                file.current.lastChild[5].type = "file"
+        file.current.lastChild[8].onmouseover = () => {
+            if (file.current.lastChild[8].value == "") {
+                file.current.lastChild[8].type = "file"
             }
         }
-        file.current.lastChild[5].onmouseout = () => {
-            if (file.current.lastChild[5].value == "") {
-                file.current.lastChild[5].type = "text"
+        file.current.lastChild[8].onmouseout = () => {
+            if (file.current.lastChild[8].value == "") {
+                file.current.lastChild[8].type = "text"
+            }
+        }
+        if (isMobile) {
+            file.current.lastChild[8].onclick = () => {
+                file.current.lastChild[8].type = "file"
             }
         }
     }, [file])
