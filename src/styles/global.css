@@ -33,6 +33,9 @@ nav.navigate {
 nav.navigate img {
     height: 100px;
 }
+nav.navigate .navbar-nav {
+    font-size: 1.15rem;
+}
 nav.navigate .navbar-nav > * {
     text-transform: capitalize;
     position: relative;
