@@ -1530,6 +1530,11 @@ hr {
     padding: 15px 30px;
     border-radius: 30px;
 }
+.apply .custom-select .head {
+    padding: 10px 30px;
+    background: #fff;
+    color: #6c757d;
+}
 .custom-select .head input {
     position: absolute;
     top: -50vh;

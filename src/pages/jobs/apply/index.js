@@ -4,11 +4,24 @@ import { useForm } from "react-hook-form";
 import Head from 'next/head';
 
 const Apply = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
     const [overlay, setOverlay] = useState(false)
-    const onSubmit = data => {
-        setOverlay(true);
-        console.log(data);
+    const { register, handleSubmit, formState: { errors }, clearErrors, setValue } = useForm();
+    const onSubmit = data => console.log(data);
+    const [selectValue1, setSelectValue1] = useState("")
+    const [selectValue2, setSelectValue2] = useState("")
+    const [isOpen1, setIsOpen1] = useState(false)
+    const [isOpen2, setIsOpen2] = useState(false)
+    const handleOption1 = value => {
+        setSelectValue1(value);
+        setIsOpen1(false);
+        setValue('notice', value)
+        clearErrors('notice');
+    }
+    const handleOption2 = value => {
+        setSelectValue2(value);
+        setIsOpen2(false);
+        setValue('years', value)
+        clearErrors('years');
     }
     const file = useRef()
     useEffect(() => {
@@ -47,13 +60,31 @@ const Apply = () => {
                             {errors.email && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
-                            <Form.Select aria-label="Default select example" defaultValue=""{...register("notice", { required: true })}>
-                                <option disabled hidden value="">Years of Experience</option>
-                                <option value="1">One Week</option>
-                                <option value="2">Two Weeks</option>
-                                <option value="3">Three Weeks</option>
-                                <option value="4">Four Weeks</option>
-                            </Form.Select>
+                            <div className='custom-select'>
+                                <div className="head d-flex justify-content-between" onClick={() => setIsOpen1(!isOpen1)}>
+                                    <input type="text" value={selectValue1} onChange={e => setSelectValue1(e.target.value)} {...register("notice", { required: true })} />
+                                    <span>{selectValue1 == "" ? "Notice Period" : selectValue1}</span>
+                                    <div className="toggle">
+                                        {
+                                            isOpen1 ? (
+                                                <i className="fas fa-angle-up"></i>
+                                            ) : (
+                                                <i className="fas fa-angle-down"></i>
+                                            )
+                                        }
+                                    </div>
+                                </div>
+                                {
+                                    isOpen1 && (
+                                        <div className="options">
+                                            <div className="option" onClick={() => handleOption1("1 week")}>1 week</div>
+                                            <div className="option" onClick={() => handleOption1("2 weeks")}>2 weeks</div>
+                                            <div className="option" onClick={() => handleOption1("3 weeks")}>3 weeks</div>
+                                            <div className="option" onClick={() => handleOption1("4 weeks")}>4 weeks</div>
+                                        </div>
+                                    )
+                                }
+                            </div>
                             {errors.notice && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
@@ -72,12 +103,31 @@ const Apply = () => {
                             <Form.Control type="text" className='h-100' placeholder="Tell us about yourself and why you are applying to this job (optional)" />
                         </div>
                         <div>
-                            <Form.Select aria-label="Default select example" defaultValue=""{...register("years", { required: true })}>
-                                <option disabled hidden value="">Notice Period</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </Form.Select>
+                            <div className='custom-select'>
+                                <div className="head d-flex justify-content-between" onClick={() => setIsOpen2(!isOpen2)}>
+                                    <input type="text" hidden value={selectValue2} onChange={e => setSelectValue2(e.target.value)} {...register("years", { required: true })} />
+                                    <span>{selectValue2 == "" ? "Years of Experience" : selectValue2}</span>
+                                    <div className="toggle">
+                                        {
+                                            isOpen2 ? (
+                                                <i className="fas fa-angle-up"></i>
+                                            ) : (
+                                                <i className="fas fa-angle-down"></i>
+                                            )
+                                        }
+                                    </div>
+                                </div>
+                                {
+                                    isOpen2 && (
+                                        <div className="options">
+                                            <div className="option" onClick={() => handleOption2("1 year")}>1 year</div>
+                                            <div className="option" onClick={() => handleOption2("2 years")}>2 years</div>
+                                            <div className="option" onClick={() => handleOption2("3 years")}>3 years</div>
+                                            <div className="option" onClick={() => handleOption2("4 years")}>4 years</div>
+                                        </div>
+                                    )
+                                }
+                            </div>
                             {errors.years && <span className='text-danger'>*This field is required</span>}
                         </div>
                         <div>
